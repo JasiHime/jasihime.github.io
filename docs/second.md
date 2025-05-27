@@ -1,3 +1,7 @@
+---
+permalink: /secondo/
+---
+
 # Second Page
 This is my second page and I hope you are proud. Have some code:
 ```
