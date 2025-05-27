@@ -1,4 +1,6 @@
 ---
+layout: page
+title: "My Second Page"
 permalink: /secondo/
 ---
 
