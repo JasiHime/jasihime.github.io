@@ -1,4 +1,4 @@
-theme: jekyll-theme-slate
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 title: Test Website
 description: This is just a test, sorry!
 sidebar:
