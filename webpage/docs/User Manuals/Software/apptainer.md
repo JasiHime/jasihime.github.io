@@ -6,17 +6,18 @@ Apptainer (formerly Singularity) simplifies the creation and execution of contai
 Containers are images run on a server, using base operating system components from that server. It’s similar to a virtual machine, where you can choose your OS and what packages to install within it, without compromising the host system.
 
 ## Load Module
+
 === "Central"
 
-``` Central
-module load apptainer
-```
+    ``` Central
+    module load apptainer
+    ```
 
 === "MARS"
 
-``` MARS
-module load apps/apptainer
-```
+    ``` MARS
+    module load apps/apptainer
+    ```
 
 ## Usage
 For usage information run the following command after loading the module:
