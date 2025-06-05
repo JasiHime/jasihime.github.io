@@ -6,8 +6,13 @@ theme:
     - navigation.footer
     - navigation.path
     - navigation.top
+    - content.tabs.link
   palette:
     media: "(prefers-color-scheme: dark)"
     scheme: slate
     primary: 'teal'
     accent: 'teal'
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
