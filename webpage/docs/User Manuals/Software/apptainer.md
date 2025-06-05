@@ -21,9 +21,18 @@ Containers are images run on a server, using base operating system components fr
 
 ## Usage
 For usage information run the following command after loading the module:
-```
-apptainer --help
-```
+
+=== "Central"
+
+    ``` Central
+    apptainer fake --help
+    ```
+
+=== "MARS"
+    
+    ``` MARS
+    apptainer --help
+    ```
 
 Below we have some easy manuals to get a first feel for containers, though we would recommend going through the more in depth Quick Start guide Apptainer offers in their documentation. This is linked in the “External Links” below.
 

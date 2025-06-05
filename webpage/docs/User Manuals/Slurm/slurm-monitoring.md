@@ -21,6 +21,14 @@ An additional command, which bases its data from the Slurm accounting database i
 
 seff gives you a quick overview of resources of a job including the efficiency
 
-```
-seff <JobID>
-```
+=== "Central"
+
+    ``` Central
+    seff fake <JobID>
+    ```
+
+=== "MARS"
+    
+    ``` MARS
+    seff <JobID>
+    ```
