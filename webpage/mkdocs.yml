@@ -4,8 +4,10 @@ theme:
   features:
     - content.action.view
     - navigation.footer
+    - navigation.path
+    - navigation.top
   palette:
     media: "(prefers-color-scheme: dark)"
     scheme: slate
-    primary: 'deep orange'
-    accent: 'amber'
+    primary: 'teal'
+    accent: 'teal'
