@@ -1,0 +1,6 @@
+site_name: MySite
+theme:
+  name: material
+  features:
+    - content.action.view
+    - navigation.footer
