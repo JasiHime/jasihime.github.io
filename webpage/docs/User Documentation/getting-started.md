@@ -1,7 +1,9 @@
-# Getting started on MARS
-You requested your account and are ready to start using MARS! This page shows you to the most important information you need to start your HPC journey.
+# Getting started on Central
+You requested your account and are ready to start using the Central HPC! This page shows you to the most important information you need to start your HPC journey.
 
-## Accessing MARS
+## Accessing the Cluster
+To access the system, you log into a login node. The login node is the central point of access to the cluster for all users. This server is not very powerful and should therefore not be used for computational work. Any computational work should go through a job allocation on the scheduler.
+
 To get all the information you need to access MARS see Connecting to MARS.
 
 If you are new to UNIX console we recommend going through the UNIX Tutorial for Beginners.
