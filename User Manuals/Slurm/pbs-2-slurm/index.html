@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../pbs-2-slurm/">
+        <link rel="prev" href="../../getting-started/">
       
       
-        <link rel="next" href="../../Software/apptainer/">
+        <link rel="next" href="../slurm-monitoring/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Slurm Job Monitoring - MySite</title>
+        <title>PBS to Slurm Cheat Sheet - MySite</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-job-monitoring" class="md-skip">
+        <a href="#pbs-to-slurm-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slurm Job Monitoring
+              PBS to Slurm Cheat Sheet
             
           </span>
         </div>
@@ -482,29 +482,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../pbs-2-slurm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    PBS to Slurm Cheat Sheet
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -522,13 +499,36 @@
   
   
   <span class="md-ellipsis">
-    Slurm Job Monitoring
+    PBS to Slurm Cheat Sheet
     
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slurm Job Monitoring
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -652,30 +652,43 @@
 
 
 
-<h1 id="slurm-job-monitoring">Slurm Job Monitoring</h1>
-<p>Slurm is saving accounting data for every job run on the system. The accounting database contains information about exit codes, resource usage, runtime and more. With this utility you can keep track of your usage of the cluster for currently running or finished jobs.</p>
-<p>To access this information you can use the sacct command. This is a very powerful command and the full documentation can be found here sacct or you can run man sacct on the system. Here some examples:</p>
-<p>Show all your jobs from the last 7 days:</p>
-<div class="highlight"><pre><span></span><code>sacct -u &lt;GUID&gt; -S $(date +%Y-%m-%d -d &quot;-7 days&quot;) -X
-</code></pre></div>
-<p>Resource information for a specific job:</p>
-<div class="highlight"><pre><span></span><code>sacct -j &lt;JobID&gt; -o JobID,JobName,Partition,Account,AllocNodes,AllocTRES -X -P
-</code></pre></div>
-<p>For the -o parameter you can choose all the information listed and described here: sacct – Job-Accounting-Fields</p>
-<p>An additional command, which bases its data from the Slurm accounting database is the seff command. This should only be used on completed jobs, or the shown data could be wrong.</p>
-<p>seff gives you a quick overview of resources of a job including the efficiency</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label><label for="__tabbed_1_2">MARS</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>seff fake &lt;JobID&gt;
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>seff &lt;JobID&gt;
-</code></pre></div>
-</div>
-</div>
-</div>
+<h1 id="pbs-to-slurm-cheat-sheet">PBS to Slurm Cheat Sheet</h1>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submit a job via script</td>
+<td><code>qsub myScript.sh</code></td>
+<td><code>sbatch myScript.sh</code></td>
+</tr>
+<tr>
+<td>Cancel a job</td>
+<td><code>qdel &lt;JobID&gt;</code></td>
+<td><code>scancel &lt;JobID&gt;</code></td>
+</tr>
+<tr>
+<td>List all jobs</td>
+<td>qstat</td>
+<td>squeue</td>
+</tr>
+<tr>
+<td>List all your jobs</td>
+<td><code>qstat -u &lt;GUID&gt;</code></td>
+<td><code>squeue -u &lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td>Advanced job information</td>
+<td><code>qstat -f &lt;JobID&gt;</code></td>
+<td><code>sacct -j &lt;JobID&gt;</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -713,7 +726,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../pbs-2-slurm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PBS to Slurm Cheat Sheet">
+          <a href="../../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting started on MARS">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -723,20 +736,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                PBS to Slurm Cheat Sheet
+                Getting started on MARS
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Software/apptainer/" class="md-footer__link md-footer__link--next" aria-label="Next: Apptainer">
+          <a href="../slurm-monitoring/" class="md-footer__link md-footer__link--next" aria-label="Next: Slurm Job Monitoring">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Apptainer
+                Slurm Job Monitoring
               </div>
             </div>
             <div class="md-footer__button md-icon">
