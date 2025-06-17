@@ -494,6 +494,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PBS to Slurm Cheat Sheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -505,6 +518,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -638,6 +697,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -653,6 +747,7 @@
 
 
 <h1 id="pbs-to-slurm-cheat-sheet">PBS to Slurm Cheat Sheet</h1>
+<h2 id="user-commands">User Commands</h2>
 <table>
 <thead>
 <tr>
@@ -673,12 +768,12 @@
 <td><code>scancel &lt;JobID&gt;</code></td>
 </tr>
 <tr>
-<td>List all jobs</td>
-<td>qstat</td>
-<td>squeue</td>
+<td>List all running jobs</td>
+<td><code>qstat</code></td>
+<td><code>squeue</code></td>
 </tr>
 <tr>
-<td>List all your jobs</td>
+<td>List all your running jobs</td>
 <td><code>qstat -u &lt;GUID&gt;</code></td>
 <td><code>squeue -u &lt;GUID&gt;</code></td>
 </tr>
@@ -686,6 +781,125 @@
 <td>Advanced job information</td>
 <td><code>qstat -f &lt;JobID&gt;</code></td>
 <td><code>sacct -j &lt;JobID&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job ID</td>
+<td><code>$PBS_JOBID</code></td>
+<td><code>$SLURM_JOBID</code></td>
+</tr>
+<tr>
+<td>Submit directory</td>
+<td><code>$PBS_O_WORKDIR</code></td>
+<td><code>$SLURM_SUBMIT_DIR</code></td>
+</tr>
+<tr>
+<td>Allocated node list</td>
+<td><code>$PBS_NODEFILE</code></td>
+<td><code>$SLURM_JOB_NODELIST</code></td>
+</tr>
+<tr>
+<td>Current node name</td>
+<td><code>-</code></td>
+<td><code>$SLURMD_NODENAME</code></td>
+</tr>
+<tr>
+<td>Array job index</td>
+<td><code>$PBS_ARRAY_INDEX</code></td>
+<td><code>$SLURM_ARRAY_TASK_ID</code></td>
+</tr>
+<tr>
+<td>Number of CPUs</td>
+<td><code>$PBS_NUM_PPN * $PBS_NUM_NODES</code></td>
+<td><code>$SLURM_NPROCS</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="job-parameters">Job Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job name</td>
+<td><code>#PBS -N myJob</code></td>
+<td><code>#SBATCH --job-name=myJob</code></td>
+</tr>
+<tr>
+<td>Wallclock limit</td>
+<td><code>#PBS -l walltime=hh:mm:ss</code></td>
+<td><code>#SBATCH --time=dd-hh:mm:ss</code></td>
+</tr>
+<tr>
+<td>CPU Time</td>
+<td><code>#PBS -l cput=hh:mm:ss</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>Number of nodes and CPUs</td>
+<td><code>#PBS -l nodes=2:ppn=8</code></td>
+<td><code>#SBATCH --nodes=2 --ntasks-per-node=1 --cpus-per-task=8</code></td>
+</tr>
+<tr>
+<td>Memory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --mem=8G</code></td>
+</tr>
+<tr>
+<td>GPU</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --gres=gpu:1</code></td>
+</tr>
+<tr>
+<td>Array</td>
+<td><code>#PBS -t 1-100</code></td>
+<td><code>#SBATCH --array=1-100</code></td>
+</tr>
+<tr>
+<td>Select queue / partition</td>
+<td><code>#PBS -q &lt;QueueName&gt;</code></td>
+<td><code>#SBATCH --partition=&lt;PartitionName&gt;</code></td>
+</tr>
+<tr>
+<td>Working directory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --workdir=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDOUT file</td>
+<td><code>#PBS -o /path/to/file</code></td>
+<td><code>#SBATCH --output=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDERR file</td>
+<td><code>#PBS -e /path/to/file</code></td>
+<td><code>#SBATCH --error=/path/to/file</code></td>
+</tr>
+<tr>
+<td>Email notifications</td>
+<td><code>#PBS -m a\|b\|e</code></td>
+<td><code>#SBATCH --mail-type=NONE\|BEGIN\|END\|FAIL\|ALL</code></td>
+</tr>
+<tr>
+<td>Email recipient</td>
+<td><code>#PBS -M &lt;Email&gt;</code></td>
+<td><code>#SBATCH --mail-user=&lt;Email&gt;</code></td>
 </tr>
 </tbody>
 </table>
