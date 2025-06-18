@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../../Slurm%20Guides/slurm-monitoring/">
+        <link rel="prev" href="../connecting/">
       
       
-        <link rel="next" href="../../Tutorials/slurm-101/">
+        <link rel="next" href="../getting-started/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Apptainer - MySite</title>
+        <title>Data Management - MySite</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apptainer" class="md-skip">
+        <a href="#data-management" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MySite" class="md-header__button md-logo" aria-label="MySite" data-md-component="logo">
+    <a href="../.." title="MySite" class="md-header__button md-logo" aria-label="MySite" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Apptainer
+              Data Management
             
           </span>
         </div>
@@ -184,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MySite" class="md-nav__button md-logo" aria-label="MySite" data-md-component="logo">
+    <a href="../.." title="MySite" class="md-nav__button md-logo" aria-label="MySite" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -202,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -262,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compute%20System%20Information/acknowledgement/" class="md-nav__link">
+      <a href="../../Compute%20System%20Information/acknowledgement/" class="md-nav__link">
         
   
   
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compute%20System%20Information/compute-resources/" class="md-nav__link">
+      <a href="../../Compute%20System%20Information/compute-resources/" class="md-nav__link">
         
   
   
@@ -308,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compute%20System%20Information/storage/" class="md-nav__link">
+      <a href="../../Compute%20System%20Information/storage/" class="md-nav__link">
         
   
   
@@ -376,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Policies/usage-policy/" class="md-nav__link">
+      <a href="../../Policies/usage-policy/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
   <span class="md-ellipsis">
-    User Documentation
+    User docs
     
   </span>
   
@@ -435,7 +435,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            User Documentation
+            User docs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -446,12 +446,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../account-registration/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Get an Account on the Central HPC
+    User Documentation
     
   </span>
   
@@ -469,7 +469,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/" class="md-nav__link">
+      <a href="../account-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting an Account
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connecting/" class="md-nav__link">
         
   
   
@@ -489,10 +512,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../data-management/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -503,6 +535,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -515,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -538,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/" class="md-nav__link">
+      <a href="../slurm/" class="md-nav__link">
         
   
   
@@ -561,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/" class="md-nav__link">
+      <a href="../software/" class="md-nav__link">
         
   
   
@@ -592,10 +625,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   
@@ -608,8 +641,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Slurm Guides
           </label>
@@ -622,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Slurm%20Guides/pbs-2-slurm/" class="md-nav__link">
+      <a href="../Slurm%20Guides/pbs-2-slurm/" class="md-nav__link">
         
   
   
@@ -645,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Slurm%20Guides/slurm-monitoring/" class="md-nav__link">
+      <a href="../Slurm%20Guides/slurm-monitoring/" class="md-nav__link">
         
   
   
@@ -656,161 +689,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Software Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            Software Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Apptainer
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Apptainer
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about" class="md-nav__link">
-    <span class="md-ellipsis">
-      About
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-module" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load Module
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run containers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -847,7 +725,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Software Guides
     
   </span>
   
@@ -857,6 +735,75 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Software Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Guides/apptainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apptainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -869,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorials/slurm-101/" class="md-nav__link">
+      <a href="../Tutorials/slurm-101/" class="md-nav__link">
         
   
   
@@ -892,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorials/unix-101/" class="md-nav__link">
+      <a href="../Tutorials/unix-101/" class="md-nav__link">
         
   
   
@@ -943,56 +890,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about" class="md-nav__link">
-    <span class="md-ellipsis">
-      About
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-module" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load Module
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run containers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1007,97 +904,7 @@
 
 
 
-<h1 id="apptainer">Apptainer</h1>
-<h2 id="about">About</h2>
-<p>Apptainer (formerly Singularity) simplifies the creation and execution of containers, ensuring software components are encapsulated for portability and reproducibility.</p>
-<p>Containers are images run on a server, using base operating system components from that server. It’s similar to a virtual machine, where you can choose your OS and what packages to install within it, without compromising the host system.</p>
-<h2 id="load-module">Load Module</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label><label for="__tabbed_1_2">MARS</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apptainer
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apps/apptainer
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="usage">Usage</h2>
-<p>For usage information run the following command after loading the module:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label><label for="__tabbed_2_2">MARS</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>apptainer fake --help
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>apptainer --help
-</code></pre></div>
-</div>
-</div>
-</div>
-<p>Below we have some easy manuals to get a first feel for containers, though we would recommend going through the more in depth Quick Start guide Apptainer offers in their documentation. This is linked in the “External Links” below.</p>
-<h3 id="run-containers">Run containers</h3>
-<p>On MARS you can run images you made yourself, or run images provided by colleagues or software developers. Please make sure the images you are using are from trusted sources!</p>
-<p>You can run a container using the <code>apptainer run</code> command. The <code>&lt;image&gt;</code> part can either be the path to a <code>.sif</code> image you have saved locally or it can be a link to an image stored in a repository online.</p>
-<div class="highlight"><pre><span></span><code>apptainer run &lt;options&gt; &lt;image&gt;
-</code></pre></div>
-<p>As an example we will use the image hosted on the GitHub container registry by the Apptainer developers: docker://ghcr.io/apptainer/lolcow. All you need to do is provide the link and Apptainer will run the %runscript code of the image. In our example this will be a cow, telling you the current time and date:</p>
-<div class="highlight"><pre><span></span><code>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer run docker://ghcr.io/apptainer/lolcow
- ______________________________
-&lt; Tue Feb 11 14:02:52 GMT 2025 &gt;
- ------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-</code></pre></div>
-<p>If you want to run a command outside of the workflow defined in <code>%runscript</code>, you can use the <code>apptainer</code> exec command:</p>
-<div class="highlight"><pre><span></span><code>apptainer exec &lt;options&gt; &lt;image&gt; &lt;command&gt;
-</code></pre></div>
-<p>This will not run the code within <code>%runscript</code> and instead run the code you provide on the command line:</p>
-<div class="highlight"><pre><span></span><code>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer exec docker://ghcr.io/apptainer/lolcow echo &quot;I won&#39;t do what I was made for!&quot;
-I won&#39;t do what I was made for!
-[&lt;GUID&gt;@node1 [mars] ~]$
-</code></pre></div>
-<p>If you want to test and debug, you can run an interactive shell from within a container, using the <code>apptainer shell</code> command. To leave just use exit:</p>
-<div class="highlight"><pre><span></span><code>apptainer shell &lt;options&gt; &lt;image&gt;
-[&lt;GUID&gt;@node1 [mars] ~]$ apptainer shell docker://ghcr.io/apptainer/lolcow
-Apptainer&gt; echo $SHELL
-/bin/bash
-Apptainer&gt; echo &quot;Hello, world!&quot;
-Hello, world!
-Apptainer&gt; exit
-[&lt;GUID&gt;@node1 [mars] ~]$
-</code></pre></div>
-<p>All three of these commands have similar parameters. If you want to see all available options for the command run <code>man apptainer &lt;run/exec/shell&gt;</code> in your console. Below we explain some options we see as important:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Template</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-B, --bind=[]</code></td>
-<td><code>-B &lt;src&gt;:&lt;dest&gt;</code></td>
-<td><code>-B ~/mydata:/datadir</code></td>
-<td>Binds the local directory ~/mydata to /datadir within the container.</td>
-</tr>
-<tr>
-<td><code>--nv</code></td>
-<td><code>--nv</code></td>
-<td><code>--nv</code></td>
-<td>Enables Nvidia support. Use this option when working on GPU-servers to ensure you have the GPU available within your container.</td>
-</tr>
-</tbody>
-</table>
+<h1 id="data-management">Data Management</h1>
 
 
 
@@ -1135,7 +942,7 @@ Apptainer&gt; exit
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Slurm%20Guides/slurm-monitoring/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Slurm Job Monitoring">
+          <a href="../connecting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Connecting to Cluster">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1145,20 +952,20 @@ Apptainer&gt; exit
                 Previous
               </span>
               <div class="md-ellipsis">
-                Slurm Job Monitoring
+                Connecting to Cluster
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Tutorials/slurm-101/" class="md-footer__link md-footer__link--next" aria-label="Next: Slurm for Beginners">
+          <a href="../getting-started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting started on Central">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Slurm for Beginners
+                Getting started on Central
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1194,10 +1001,10 @@ Apptainer&gt; exit
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.view", "navigation.footer", "navigation.path", "navigation.top", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "navigation.footer", "navigation.path", "navigation.top", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

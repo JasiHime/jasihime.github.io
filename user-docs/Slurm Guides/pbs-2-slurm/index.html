@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../slurm-101/">
+        <link rel="prev" href="../../software/">
       
+      
+        <link rel="next" href="../slurm-monitoring/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>UNIX for Beginners - MySite</title>
+        <title>PBS to Slurm Cheat Sheet - MySite</title>
       
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unix-for-beginners" class="md-skip">
+        <a href="#pbs-to-slurm-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UNIX for Beginners
+              PBS to Slurm Cheat Sheet
             
           </span>
         </div>
@@ -422,7 +424,7 @@
   
   
   <span class="md-ellipsis">
-    User Documentation
+    User docs
     
   </span>
   
@@ -433,9 +435,32 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            User Documentation
+            User docs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -449,7 +474,7 @@
   
   
   <span class="md-ellipsis">
-    Get an Account on the Central HPC
+    Getting an Account
     
   </span>
   
@@ -579,21 +604,23 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   
@@ -606,8 +633,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Slurm Guides
           </label>
@@ -617,10 +644,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Slurm%20Guides/pbs-2-slurm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PBS to Slurm Cheat Sheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -631,6 +680,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -643,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Slurm%20Guides/slurm-monitoring/" class="md-nav__link">
+      <a href="../slurm-monitoring/" class="md-nav__link">
         
   
   
@@ -682,10 +778,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   
@@ -698,8 +794,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Software Guides
           </label>
@@ -740,23 +836,21 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
             
   
   
@@ -769,8 +863,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -783,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm-101/" class="md-nav__link">
+      <a href="../../Tutorials/slurm-101/" class="md-nav__link">
         
   
   
@@ -803,19 +897,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Tutorials/unix-101/" class="md-nav__link">
         
   
   
@@ -826,7 +911,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -867,6 +951,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -881,7 +1000,163 @@
 
 
 
-<h1 id="unix-for-beginners">UNIX for Beginners</h1>
+<h1 id="pbs-to-slurm-cheat-sheet">PBS to Slurm Cheat Sheet</h1>
+<h2 id="user-commands">User Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submit a job via script</td>
+<td><code>qsub myScript.sh</code></td>
+<td><code>sbatch myScript.sh</code></td>
+</tr>
+<tr>
+<td>Cancel a job</td>
+<td><code>qdel &lt;JobID&gt;</code></td>
+<td><code>scancel &lt;JobID&gt;</code></td>
+</tr>
+<tr>
+<td>List all running jobs</td>
+<td><code>qstat</code></td>
+<td><code>squeue</code></td>
+</tr>
+<tr>
+<td>List all your running jobs</td>
+<td><code>qstat -u &lt;GUID&gt;</code></td>
+<td><code>squeue -u &lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td>Advanced job information</td>
+<td><code>qstat -f &lt;JobID&gt;</code></td>
+<td><code>sacct -j &lt;JobID&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job ID</td>
+<td><code>$PBS_JOBID</code></td>
+<td><code>$SLURM_JOBID</code></td>
+</tr>
+<tr>
+<td>Submit directory</td>
+<td><code>$PBS_O_WORKDIR</code></td>
+<td><code>$SLURM_SUBMIT_DIR</code></td>
+</tr>
+<tr>
+<td>Allocated node list</td>
+<td><code>$PBS_NODEFILE</code></td>
+<td><code>$SLURM_JOB_NODELIST</code></td>
+</tr>
+<tr>
+<td>Current node name</td>
+<td><code>-</code></td>
+<td><code>$SLURMD_NODENAME</code></td>
+</tr>
+<tr>
+<td>Array job index</td>
+<td><code>$PBS_ARRAY_INDEX</code></td>
+<td><code>$SLURM_ARRAY_TASK_ID</code></td>
+</tr>
+<tr>
+<td>Number of CPUs</td>
+<td><code>$PBS_NUM_PPN * $PBS_NUM_NODES</code></td>
+<td><code>$SLURM_NPROCS</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="job-parameters">Job Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job name</td>
+<td><code>#PBS -N myJob</code></td>
+<td><code>#SBATCH --job-name=myJob</code></td>
+</tr>
+<tr>
+<td>Wallclock limit</td>
+<td><code>#PBS -l walltime=hh:mm:ss</code></td>
+<td><code>#SBATCH --time=dd-hh:mm:ss</code></td>
+</tr>
+<tr>
+<td>CPU Time</td>
+<td><code>#PBS -l cput=hh:mm:ss</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>Number of nodes and CPUs</td>
+<td><code>#PBS -l nodes=2:ppn=8</code></td>
+<td><code>#SBATCH --nodes=2 --ntasks-per-node=1 --cpus-per-task=8</code></td>
+</tr>
+<tr>
+<td>Memory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --mem=8G</code></td>
+</tr>
+<tr>
+<td>GPU</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --gres=gpu:1</code></td>
+</tr>
+<tr>
+<td>Array</td>
+<td><code>#PBS -t 1-100</code></td>
+<td><code>#SBATCH --array=1-100</code></td>
+</tr>
+<tr>
+<td>Select queue / partition</td>
+<td><code>#PBS -q &lt;QueueName&gt;</code></td>
+<td><code>#SBATCH --partition=&lt;PartitionName&gt;</code></td>
+</tr>
+<tr>
+<td>Working directory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --workdir=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDOUT file</td>
+<td><code>#PBS -o /path/to/file</code></td>
+<td><code>#SBATCH --output=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDERR file</td>
+<td><code>#PBS -e /path/to/file</code></td>
+<td><code>#SBATCH --error=/path/to/file</code></td>
+</tr>
+<tr>
+<td>Email notifications</td>
+<td><code>#PBS -m a\|b\|e</code></td>
+<td><code>#SBATCH --mail-type=NONE\|BEGIN\|END\|FAIL\|ALL</code></td>
+</tr>
+<tr>
+<td>Email recipient</td>
+<td><code>#PBS -M &lt;Email&gt;</code></td>
+<td><code>#SBATCH --mail-user=&lt;Email&gt;</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -919,7 +1194,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../slurm-101/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Slurm for Beginners">
+          <a href="../../software/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -929,11 +1204,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Slurm for Beginners
+                Software
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../slurm-monitoring/" class="md-footer__link md-footer__link--next" aria-label="Next: Slurm Job Monitoring">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Slurm Job Monitoring
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
