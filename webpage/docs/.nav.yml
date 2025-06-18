@@ -1,5 +1,11 @@
 nav: 
   - index.md
   - Cluster: system-information
-  - User Documentation: user-docs
+  - User Documentation: 
+    - user-docs/account-registration.md
+    - user-docs/quickstart.md
+    - Software Modules: user-docs/software-modules
+    - Tutorials: user-docs/tutorials
+    - Guides: user-docs/guides
   - Policies: policies
+  
