@@ -26,7 +26,8 @@ jobs:
       - run: pip install \
             mkdocs-material \
             pymdown-extensions \
-            mkdocs-awesome-nav
+            mkdocs-awesome-nav \
+            mkdocs-material-extensions
       - run: mkdocs gh-deploy --config-file webpage/mkdocs.yml --force
  
   deploy_mkdocs:
