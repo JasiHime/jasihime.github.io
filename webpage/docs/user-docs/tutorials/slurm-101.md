@@ -3,10 +3,10 @@ This small tutorial should give you a start to the world of Slurm! If you have a
 
 If you are not familiar with the UNIX console, please do the UNIX Tutorial for Beginners first.
 
-For this whole tutorial you will find code snippets, these are displayed as interactions on a console. You will see the prompt followed by a $, anything after are the commands entered, the rest is the output.
+For this whole tutorial you will find code snippets, these are displayed as interactions on a console. Lines with a preceding $ are the commands entered, ones without, are the output of these commands.
 
 ```
-[<guid>@<server> [mars] ~]$ <command-entered-by-user>
+$ <command-entered-by-user>
 <command-output>
 ```
 
@@ -16,7 +16,7 @@ The Scheduler, is the program running on the cluster, that schedules your jobs t
 Look at what resources you have available to you on the cluster, using the Slurm `sinfo` command. (The output displayed below is shortened)
 
 ```
-[<guid>@login1 [mars] ~]$ sinfo -o "%n %c %m %G" | column -t
+$ sinfo -o "%n %c %m %G" | column -t
 HOSTNAMES  CPUS  MEMORY   GRES
 node021     64    514048   (null)
 node022     64    515072   (null)
@@ -27,7 +27,7 @@ node023     64    515072   (null)
 The nodes are grouped into partitions, this is a way to define what type of machine you want to work with. They are sometimes also referred to as queues. You can list all available partitions also using the `sinfo` command:
 
 ```
-[<guid>@login1 [mars] ~]$ sinfo -o "%P %D %N" | column -t
+$ sinfo -o "%P %D %N" | column -t
 PARTITION  NODES  NODELIST
 nodes*     10     node[01-10]
 gpu        3      gpu[01-20]
@@ -39,8 +39,8 @@ Interactive jobs are great to install software, prepare your environment or debu
 You can start an interactive job using the `srun` command. You can tell, you are on a different server by the prompt, which should now feature the name of a compute node:
 
 ```
-[<guid>@login1 [mars] ~]$ srun --pty bash
-[<guid>@node01 [mars] ~]$
+[login1]$ srun --pty bash
+[node01]$
 ```
 
 Similar from how you switched from your PC via `ssh` to the login node, we now switched from the login node to the compute node using Slurm.
@@ -49,12 +49,12 @@ In this session, we can start doing computational work. As an example, we will r
 
 1. Load the python module
 ```
-[<guid>@node01 [mars] ~]$ module load apps/python3
+$ module load apps/python3
 ```
 
 2. Run python3
 ```
-[<guid>@node01 [mars] ~]$ python3
+$ python3
 ```
 
 3. Import python libraries
@@ -85,16 +85,16 @@ In this session, we can start doing computational work. As an example, we will r
 Look at the file you just created using `cat`. You can see it used the name of the node we are working on in the output.
 
 ```
-[<guid>@node01 [mars] ~]$ cat demofile.txt
+$ cat demofile.txt
 I am doing compute work on node01
 ```
 
 This is our interactive job done, lets close our session with the exit command. This should bring us back to the login node, as indicated by the prompt again:
 
 ```
-[<guid>@node01 [mars] ~]$ exit
+$ exit
 exit
-[<guid>@login1 [mars] ~]$
+$
 ```
 
 ## Lesson 3: Batch Job
@@ -105,7 +105,7 @@ First, we have to save our python code into a file. For this create a file with 
 You can create and edit files using either `vi` or `nano`, whatever is more comfortable to you. Nano is the easier of the two, so if you are unfamiliar, we recommend using it. To exit and save in Nano do `ctrl+X → Y → Enter`.
 
 ```
-[<guid>@login1 [mars] ~]$ nano myPythonCode.py
+$ nano myPythonCode.py
 ```
 ```
 import os
@@ -138,14 +138,14 @@ python3 myPythonCode.py
 Now you can submit your job using the `sbatch` utility and the path to the script. You will get a JobID in return, remember this to find your output later:
 
 ```
-[<guid>@login1 [mars] ~]$ sbatch myPythonJob.sh
+$ sbatch myPythonJob.sh
 Submitted batch job <JobID>
 ```
 
 After the job has finished, within your current working directory you should find an output file, which contains the `STDOUT` and an error file, which contains the `STDERR` of your job session. In addition, the file your python script created should also be there. Since your home storage is shared across all servers, you can see the output of your scripts in real time from the login node, even if the job ran on a compute node:
 
 ```
-[<guid>@login1 [mars] ~]$ ls -l
+$ ls -l
 myjob-<JobID>.out
 myjob-<JobID>.err
 demofile-<JobID>.txt
@@ -159,9 +159,9 @@ You can run this job as many times as you want by just using the sbatch command.
 You can see all running jobs on the system using the `squeue` command. If you only want to see your own jobs, you can specify your username with the `-u` parameter. If you only want to see a specific job, you can use the `-j` parameter followed by your JobID.
 
 ```
-[<yourUsername>@headnode01]$ squeue
-[<yourUsername>@headnode01]$ squeue -u <yourUsername>
-[<yourUsername>@headnode01]$ squeue -j <JobID>
+$ squeue
+$ squeue -u <yourUsername>
+$ squeue -j <JobID>
 ```
 
 The output is as follows:
@@ -183,19 +183,19 @@ A list of all available Job-Accounting-Fields can be found here: sacct manual
 Below is an example that gives you an overview of the requested resources for a job. You should see, these are the values you provided in the “SLURM SETTINGS” section of the script:
 
 ```
-[<yourUsername>@headnode01]$ sacct -j <JobID> -o JobID,User,ReqCPUS,ReqMem,ReqNodes,TimeLimit -X
+$ sacct -j <JobID> -o JobID,User,ReqCPUS,ReqMem,ReqNodes,TimeLimit -X
 ```
 
 Now let’s get some more information on how and where our job ran. In this output we see how long the job ran, and how it completed. An `ExitCode` of anything other than `0` usually means there was an error:
 
 ```
-[<yourUsername>@headnode01]$ sacct -j <JobID> -o JobID,NodeList,Start,End,Elapsed,State,ExitCode -X
+$ sacct -j <JobID> -o JobID,NodeList,Start,End,Elapsed,State,ExitCode -X
 ```
 
 Say we want to check if our job ran efficiently, we could use the `seff` command. It uses data from the Slurm accounting database, to create information on how efficiently your job ran. We can use this information to make our jobs more efficient:
 
 ```
-[<yourUsername>@headnode01]$ seff <JobID>
+$ seff <JobID>
 ```
 
 These efficiency values are only accurate, once your job has finished running. Accurate job scripts help the queuing system efficiently allocate shared resources. And therefore, your jobs should run quicker.
