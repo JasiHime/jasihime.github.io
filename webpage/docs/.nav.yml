@@ -4,8 +4,8 @@ nav:
   - User Documentation: 
     - user-docs/account-registration.md
     - user-docs/quickstart.md
-    - Guides: user-docs/guides
     - Tutorials: user-docs/tutorials
+    - Guides: user-docs/guides
     - Software Modules: user-docs/software-modules
   - Policies: policies
   
