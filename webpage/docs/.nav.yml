@@ -1,8 +1,8 @@
 nav: 
   - Welcome: index.md
-  - Cluster: clusters 
-  - user-docs/account-registration.md
-  - user-docs/quickstart.md
+  - Clusters: clusters 
+  - account-registration.md
+  - quickstart.md
   - Tutorials: tutorials
   - Guides: guides
   - Software Modules: 
