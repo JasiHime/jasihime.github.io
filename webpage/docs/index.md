@@ -1,39 +1,20 @@
-# This is my title
-And this is some text
+# University of Glasgow - Central HPC
+Information Services run a compute cluster, that is available to use by all staff, students and affiliates of the University of Glasgow.
 
 <div class="grid cards" markdown>
-
--   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
-
-    ---
-
-    Install [`mkdocs-material`](#) with [`pip`](#) and get up
-    and running in minutes
-
-    [:octicons-arrow-right-24: Getting started](#)
-
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+-   :fontawesome-regular-envelope-open:{ .lg .middle } __Access__
 
     ---
 
-    Focus on your content and generate a responsive and searchable static site
+    Get access to the *Central* and start your HPC journey!
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Getting an Account](user-docs/account-registration.md)
 
--   :material-format-font:{ .lg .middle } __Made to measure__
-
-    ---
-
-    Change the colors, fonts, language, icons, logo and more with a few lines
-
-    [:octicons-arrow-right-24: Customization](#)
-
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+-   :octicons-rocket-16:{ .lg .middle } __Information__
 
     ---
 
-    Material for MkDocs is licensed under MIT and available on [GitHub]
+    We offer helpful information for HPC in general but also specific to the platform, so we encourgae all users to read up!
 
-    [:octicons-arrow-right-24: License](#)
-
+    [:octicons-arrow-right-24: User Documentation](user-docs/quickstart.md)
 </div>

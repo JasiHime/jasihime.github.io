@@ -1,4 +1,4 @@
-site_name: MySite
+site_name: "UofG HPC"
 theme:
   name: material
   features:
