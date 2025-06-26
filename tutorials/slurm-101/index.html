@@ -9,8 +9,6 @@
       
       
       
-        <link rel="prev" href="../../clusters/central/">
-      
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -18,7 +16,7 @@
     
     
       
-        <title>Usage policy - UofG HPC</title>
+        <title>Slurm for Beginners - UofG HPC</title>
       
     
     
@@ -67,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#slurm-for-beginners" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage policy
+              Slurm for Beginners
             
           </span>
         </div>
@@ -346,20 +349,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -375,7 +376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Policies
@@ -386,17 +387,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../policies/usage-policy/" class="md-nav__link">
         
   
   
@@ -407,7 +401,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -437,6 +430,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: Scheduler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-2-interactive-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 2: Interactive Job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-3-batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 3: Batch Job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-4-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 4: Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -452,26 +491,150 @@
 
 
 
-  <h1>Usage policy</h1>
-
-<p>To ensure the stability and usability of the platform for all users, there are certain rules and policies to abide by when using MARS. This is a living document, so changes can be made at any time. We will inform of major changes through our Team (Microsoft Teams). If you have any questions regarding the contents of this page, feel free to get in contact with us.</p>
-<hr />
+<h1 id="slurm-for-beginners">Slurm for Beginners</h1>
+<p>This small tutorial should give you a start to the world of Slurm! If you have any questions or issues, feel free to contact us! We help novice and expert users alike to get settled on MARS.</p>
+<p>If you are not familiar with the UNIX console, please do the UNIX Tutorial for Beginners first.</p>
+<p>For this whole tutorial you will find code snippets, these are displayed as interactions on a console. Lines with a preceding $ are the commands entered, ones without, are the output of these commands.</p>
+<div class="highlight"><pre><span></span><code>$ &lt;command-entered-by-user&gt;
+&lt;command-output&gt;
+</code></pre></div>
+<h2 id="lesson-1-scheduler">Lesson 1: Scheduler</h2>
+<p>The Scheduler, is the program running on the cluster, that schedules your jobs to be run on the resources available within the cluster. It ensures fair usage, and should under no circumstances be bypassed. In the case of the Central HPC, the scheduler is Slurm.</p>
+<p>Look at what resources you have available to you on the cluster, using the Slurm <code>sinfo</code> command. (The output displayed below is shortened)</p>
+<div class="highlight"><pre><span></span><code>$ sinfo -o &quot;%n %c %m %G&quot; | column -t
+HOSTNAMES  CPUS  MEMORY   GRES
+node021     64    514048   (null)
+node022     64    515072   (null)
+node023     64    515072   (null)
+...
+</code></pre></div>
+<p>The nodes are grouped into partitions, this is a way to define what type of machine you want to work with. They are sometimes also referred to as queues. You can list all available partitions also using the <code>sinfo</code> command:</p>
+<div class="highlight"><pre><span></span><code>$ sinfo -o &quot;%P %D %N&quot; | column -t
+PARTITION  NODES  NODELIST
+nodes*     10     node[01-10]
+gpu        3      gpu[01-20]
+</code></pre></div>
+<h2 id="lesson-2-interactive-job">Lesson 2: Interactive Job</h2>
+<p>Interactive jobs are great to install software, prepare your environment or debug your script. It is also a good point to start to engage with HPC. But please, for any serious or larger work, use batch jobs. More on those in Lesson 3!</p>
+<p>You can start an interactive job using the <code>srun</code> command. You can tell, you are on a different server by the prompt, which should now feature the name of a compute node:</p>
+<div class="highlight"><pre><span></span><code>[login1]$ srun --pty bash
+[node01]$
+</code></pre></div>
+<p>Similar from how you switched from your PC via <code>ssh</code> to the login node, we now switched from the login node to the compute node using Slurm.</p>
+<p>In this session, we can start doing computational work. As an example, we will run some python3 code.</p>
 <ol>
-<li>Jobs must be run using the Slurm queueing system, interactive or batch jobs. Logging into any worker-nodes directly is forbidden.</li>
-<li>No compute intensive task is to be run on the login-node (mars-login.ice.gla.ac.uk). The login-node is to be used for minor code/script editing, data management, submitting and monitoring jobs. The MARS team reserves the right to kill processes, that constrain the login-node, without warning.</li>
-<li>Job submissions must specify the resources to the best estimate of the user, as to not waste cluster resources. This ensures the queueing system runs optimally and therefore the user’s jobs are 5. starting as soon as possible. The MARS team reserves the right delete poorly specified jobs.</li>
-<li>Any data left on scratch spaces after the runtime of the job, may be deleted at any time and without notice.</li>
-<li>All storage on MARS is to be used only for active processing, and not for long term storage purposes. Please ensure, that all your scripts, datasets and results are saved to another system, as the MARS team offers limited data recovery services.</li>
-<li>Access to Project shares will only be granted with permission from the PI.</li>
-<li>The MARS team reserves the right to delete, kill or hold jobs or processes that have an adverse effect on the whole system’s stability or health.</li>
-<li>The job submission system has the capability to send automated emails about the progress of jobs. Users should ensure that the number of requested emails is not excessive and refrain from sending emails to any email address outside the University of Glasgow domain. This means that affiliate/external user accounts should be using a UoG email address for job alerting.</li>
-<li>MARS is to be used for research purposes. Teaching and courses are not to be held using this cluster unless it was agreed upon prior with the MARS team.</li>
-<li>There is a maximum number of resources a single user can use on MARS. If their work needs more than the default, a project should be requested, as described here. The MARS team reserves the right to decline a project application, for reasons provided.</li>
-<li>To ensure the stability and security of MARS, maintenance is needed. This might result in access being restricted to the cluster or parts of it for certain periods of time. These maintenance windows will be announced via our Team (Microsoft Teams).</li>
-<li>The resources on MARS are free to use by members of the University of Glasgow. We reserve the right to change this and implement a charging model in the future.</li>
+<li>
+<p>Load the python module
+<div class="highlight"><pre><span></span><code>$ module load apps/python3
+</code></pre></div></p>
+</li>
+<li>
+<p>Run python3
+<div class="highlight"><pre><span></span><code>$ python3
+</code></pre></div></p>
+</li>
+<li>
+<p>Import python libraries
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; import os
+</code></pre></div></p>
+</li>
+<li>
+<p>Get Slurm node name
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; node = os.getenv(&quot;SLURMD_NODENAME&quot;)
+</code></pre></div></p>
+</li>
+<li>
+<p>Open a new text file
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; myfile = open(&quot;demofile.txt&quot;, &quot;w&quot;)
+</code></pre></div></p>
+</li>
+<li>
+<p>Write into the text file
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; myfile.write(&quot;I am doing compute work on &quot; + node)
+</code></pre></div></p>
+</li>
+<li>
+<p>Exit python3
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; exit()
+</code></pre></div></p>
+</li>
 </ol>
-<hr />
-<p>Please note that in addition to the MARS Usage Policy users must also comply with the general IT Policy of the University of Glasgow.</p>
+<p>Look at the file you just created using <code>cat</code>. You can see it used the name of the node we are working on in the output.</p>
+<div class="highlight"><pre><span></span><code>$ cat demofile.txt
+I am doing compute work on node01
+</code></pre></div>
+<p>This is our interactive job done, lets close our session with the exit command. This should bring us back to the login node, as indicated by the prompt again:</p>
+<div class="highlight"><pre><span></span><code>$ exit
+exit
+$
+</code></pre></div>
+<h2 id="lesson-3-batch-job">Lesson 3: Batch Job</h2>
+<p>If you are thinking the previous lesson was quite tedious and not very convenient, you will like batch job submissions.</p>
+<p>First, we have to save our python code into a file. For this create a file with the <code>.py</code> ending and add the lines we executed in python above in the interactive job. To make sure the output of our script is unique we will add the JobID as an identifier to the output file of the script.</p>
+<p>You can create and edit files using either <code>vi</code> or <code>nano</code>, whatever is more comfortable to you. Nano is the easier of the two, so if you are unfamiliar, we recommend using it. To exit and save in Nano do <code>ctrl+X → Y → Enter</code>.</p>
+<p><div class="highlight"><pre><span></span><code>$ nano myPythonCode.py
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>import os
+node = os.getenv(&quot;SLURMD_NODENAME&quot;)
+jobid = os.getenv(&quot;SLURM_JOBID&quot;)
+myfile = open(&quot;demofile-&quot; + jobid + &quot;.txt&quot;, &quot;w&quot;)
+myfile.write(&quot;I am doing compute work on &quot; + node)
+exit()
+</code></pre></div></p>
+<p>Now to schedule our job with Slurm , we need to create a job script. You can use a template from here Slurm Job Script Templates</p>
+<p>Under the “Loading Modules” subtitle add the required software, like in the interactive job example:</p>
+<div class="highlight"><pre><span></span><code>…
+############# LOADING MODULES (optional) #############
+module load apps/python3
+…
+</code></pre></div>
+<p>In the “My Code” section run the script you saved earlier by providing it as a parameter to the python3 executable:</p>
+<div class="highlight"><pre><span></span><code>…
+############# MY CODE #############
+python3 myPythonCode.py
+</code></pre></div>
+<p>Now you can submit your job using the <code>sbatch</code> utility and the path to the script. You will get a JobID in return, remember this to find your output later:</p>
+<div class="highlight"><pre><span></span><code>$ sbatch myPythonJob.sh
+Submitted batch job &lt;JobID&gt;
+</code></pre></div>
+<p>After the job has finished, within your current working directory you should find an output file, which contains the <code>STDOUT</code> and an error file, which contains the <code>STDERR</code> of your job session. In addition, the file your python script created should also be there. Since your home storage is shared across all servers, you can see the output of your scripts in real time from the login node, even if the job ran on a compute node:</p>
+<div class="highlight"><pre><span></span><code>$ ls -l
+myjob-&lt;JobID&gt;.out
+myjob-&lt;JobID&gt;.err
+demofile-&lt;JobID&gt;.txt
+</code></pre></div>
+<p>Check the output of these files. If all went as planned, the error file should be empty.</p>
+<p>You can run this job as many times as you want by just using the sbatch command. Like this you have access to the power of the HPC compute nodes, without ever having to log into one yourself.</p>
+<h2 id="lesson-4-monitoring">Lesson 4: Monitoring</h2>
+<p>You can see all running jobs on the system using the <code>squeue</code> command. If you only want to see your own jobs, you can specify your username with the <code>-u</code> parameter. If you only want to see a specific job, you can use the <code>-j</code> parameter followed by your JobID.</p>
+<div class="highlight"><pre><span></span><code>$ squeue
+$ squeue -u &lt;yourUsername&gt;
+$ squeue -j &lt;JobID&gt;
+</code></pre></div>
+<p>The output is as follows:</p>
+<ul>
+<li><em>JOBID</em>: Unique identifier of the job. Counts up from 1 being the first job ever queued.</li>
+<li><em>PARTITION</em>: Scheduler partition the job is queued into.</li>
+<li><em>NAME</em>: Name of the job as defined by --job-name in your submission or your script name.</li>
+<li><em>USER</em>: User who submitted the job to the scheduler.</li>
+<li><em>ST</em>: Status of the job: R=Running, PD=Pending.</li>
+<li><em>TIME</em>: Time the job has been running for.</li>
+<li><em>NODES</em>: Number of nodes.</li>
+<li><em>NODELIST</em>: List of names of allocated nodes.</li>
+</ul>
+<p>Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the sacct command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the <code>-o</code> parameter followed by a list of Job-Accounting-Fields.</p>
+<p>A list of all available Job-Accounting-Fields can be found here: sacct manual</p>
+<p>Below is an example that gives you an overview of the requested resources for a job. You should see, these are the values you provided in the “SLURM SETTINGS” section of the script:</p>
+<div class="highlight"><pre><span></span><code>$ sacct -j &lt;JobID&gt; -o JobID,User,ReqCPUS,ReqMem,ReqNodes,TimeLimit -X
+</code></pre></div>
+<p>Now let’s get some more information on how and where our job ran. In this output we see how long the job ran, and how it completed. An <code>ExitCode</code> of anything other than <code>0</code> usually means there was an error:</p>
+<div class="highlight"><pre><span></span><code>$ sacct -j &lt;JobID&gt; -o JobID,NodeList,Start,End,Elapsed,State,ExitCode -X
+</code></pre></div>
+<p>Say we want to check if our job ran efficiently, we could use the <code>seff</code> command. It uses data from the Slurm accounting database, to create information on how efficiently your job ran. We can use this information to make our jobs more efficient:</p>
+<div class="highlight"><pre><span></span><code>$ seff &lt;JobID&gt;
+</code></pre></div>
+<p>These efficiency values are only accurate, once your job has finished running. Accurate job scripts help the queuing system efficiently allocate shared resources. And therefore, your jobs should run quicker.</p>
+<p>For further reading on efficiency and general HPC-Etiquette, please read HPC Etiquette.</p>
 
 
 
@@ -504,28 +667,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../clusters/central/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Central HPC Cluster">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Central HPC Cluster
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
