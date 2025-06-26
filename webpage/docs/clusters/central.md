@@ -16,3 +16,7 @@ All servers of the cluster run on Oracle Linux 9. Oracle Linux is a RHEL based o
 The cluster's scheduler is the Slurm Workload Manager, developed by SchedMD. This software is crucial for HPC and helps acheive fair usage of all available compute resources.
 
 The cluster is located in Saughfield House on the University of Glasgow Campus next to the Library building.
+
+## Acknowlegement
+Where Central is used in the development of research outputs the following attribution should be used:
+> This research utilised the University of Glasgow’s Central HPC, supported by University of Glasgow Research Computing as a Service. (link.to.website)
