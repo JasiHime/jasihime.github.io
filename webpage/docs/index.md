@@ -30,11 +30,11 @@ In the grid below we have quick links to content users are frequently looking fo
 
     [:octicons-arrow-right-24: Support](https://glasgow.saasiteu.com/Modules/SelfService/#serviceCatalog/request/AFB25E75ED5E40E4BDF84FDEE6108945)
 
--   ::material-microsoft-teams::{ .lg .middle } __Stay Up To Date__
+-   :octicons-megaphone-16:{ .lg .middle } __Stay Informed__
 
     ---
 
     Join our Team on Microsoft Teams to be up to date on any news and find likeminded HPC users!
 
-    [:octicons-arrow-right-24: Support](#)
+    [:octicons-arrow-right-24: Join HPC Community](#)
 </div>
