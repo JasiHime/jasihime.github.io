@@ -3,10 +3,10 @@ nav:
   - Cluster: clusters 
   - user-docs/account-registration.md
   - user-docs/quickstart.md
-  - Tutorials: user-docs/tutorials
-  - Guides: user-docs/guides
+  - Tutorials: tutorials
+  - Guides: guides
   - Software Modules: 
-    - user-docs/software-modules/environment-modules.md
-    - user-docs/software-modules/*.md
+    - software-modules/environment-modules.md
+    - software-modules/*.md
   - Policies: policies
   
