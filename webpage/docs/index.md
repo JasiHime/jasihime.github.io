@@ -26,7 +26,7 @@ In the grid below we have quick links to content users are frequently looking fo
 
     ---
 
-    Open a HPC Support request through Ivanti, and get in contact the out admins!
+    Open a HPC Support request through Ivanti, and get in contact with the admins!
 
     [:octicons-arrow-right-24: Support](https://glasgow.saasiteu.com/Modules/SelfService/#serviceCatalog/request/AFB25E75ED5E40E4BDF84FDEE6108945)
 
