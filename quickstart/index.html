@@ -443,6 +443,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Data Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Scratch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Scratch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1044,6 +1101,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Data Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Scratch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Scratch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1124,7 +1238,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
-<li><strong>Hostname</strong>: headnode04.cent.gla.ac.uk</li>
+<li><strong>Hostname</strong>: <code>headnode04.cent.gla.ac.uk</code></li>
 <li><strong>Username</strong>: <em>University of Glasgow GUID</em></li>
 <li><strong>Password</strong>: <em>GUID Password</em></li>
 </ul>
@@ -1138,6 +1252,35 @@
 <p>We would recommend you use a SSH GUI client for regular access to the platform, as it allows you to save sessions, and <code>copy+paste</code> more easily. Example software are <a href="https://www.putty.org/">PuTTY</a> and <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, however you can use whatever you prefer. </p>
 <hr />
 <h2 id="data-management">Data Management</h2>
+<p>Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform.</p>
+<p><strong>This is not a trusted research environment</strong>, therefore all research data must be anonymised prior to transferring it onto the system.</p>
+<h3 id="storage-spaces">Storage Spaces</h3>
+<table>
+<thead>
+<tr>
+<th>User Home</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size</td>
+<td>100G (quota per user)</td>
+</tr>
+<tr>
+<td>Path</td>
+<td><code>/mnt/home/&lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td>Use</td>
+<td>Set up your environments and store all the scripts and data you need for your personal use.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="home-storage">Home Storage</h4>
+<h4 id="shared-scratch">Shared Scratch</h4>
+<h4 id="local-scratch">Local Scratch</h4>
+<h3 id="transfer-data">Transfer Data</h3>
 <hr />
 <h2 id="scheduler">Scheduler</h2>
 <hr />
