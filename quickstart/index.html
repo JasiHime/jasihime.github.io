@@ -1055,12 +1055,14 @@
 <h3 id="architecture">Architecture</h3>
 <p>HPC can be built in in different configurations. This configuration is very popular and you will see it in many other HPCs</p>
 <p><img alt="Architecture Diagram" src="../assets/quickstart_imgs/architecture.svg" /></p>
-<p>The HPC is build of these components:
-- <strong>Login Node</strong>: This is the system all users interact with. If you want to interact with any of the other components, it has to be through the login node.
-- <strong>Scheduler</strong>: This is the brain of the cluster. All your scheduling and status requests from the login node go this system. 
-- <strong>Compute Servers</strong>: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have a allocation. 
-- <strong>Shared Storage</strong>: Most of the storage you interact with on the cluster is shared between the login node and all available compute servers. Therefore you can manage the data you need within your jobs from the login node.
-- <strong>HPC Network</strong>: The network is shut off from the Campus network and therefore systems within it, will not be accessible to users outside of the login node.</p>
+<p>The HPC is build of these components:</p>
+<ul>
+<li><strong>Login Node</strong>: This is the system all users interact with. If you want to interact with any of the other components, it has to be through the login node.</li>
+<li><strong>Scheduler</strong>: This is the brain of the cluster. All your scheduling and status requests from the login node go this system. </li>
+<li><strong>Compute Servers</strong>: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have a allocation. </li>
+<li><strong>Shared Storage</strong>: Most of the storage you interact with on the cluster is shared between the login node and all available compute servers. Therefore you can manage the data you need within your jobs from the login node.</li>
+<li><strong>HPC Network</strong>: The network is shut off from the Campus network and therefore systems within it, will not be accessible to users outside of the login node.</li>
+</ul>
 <h3 id="how-does-hpc-work">How does HPC work?</h3>
 <p>You will be submitting "work packages" in form of submission scripts, that define your resource requirement, an educated estimation of how long your job will run, and the workflow you want to run. Your work should run fully autonomous, this means no human interaction like GUI or console inputs. You can however, also have interactive sessions through HPC, these are useful for environment preparations, tests and debugging. </p>
 <p>Your work package will then be queued by the scheduler. The scheduler will decide where your job can run, based on your resource requirements described. Multiple jobs can run on one server. If there is enough resource available your job might run right away, otherwise it will be queued and run at a later time. You should be able to provide contact information, and the scheduler will keep you in the loop if your job has started, finished or failed. </p>
