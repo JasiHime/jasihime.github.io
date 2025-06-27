@@ -35,6 +35,18 @@ Scheduling is a complicated matter, and multiple factors play into the priority 
 ## Access the Cluster
 After you got your account, to access the system, you log into a login node. The login node is the central point of access to the cluster for all users. This server is not very powerful and should therefore not be used for computational work. Any computational work should go through a job allocation on the scheduler.
 
+### Connection Information
+You have to be connected to the Campus network either via cable in your office, eduroam or VPN.
+
+=== "Central"
+
+    |Attribut|Value|
+    |---|---|
+    |Server|headnode04.cent.gla.ac.uk|
+    |Port|22|
+    |Username|GUID|
+    |Password|GUID Password|
+
 ## Data Management
 
 ## Scheduler
