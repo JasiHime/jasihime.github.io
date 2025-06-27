@@ -64,13 +64,13 @@ Data is an important part of HPC. Where and how to store your data is important 
 
 |User Home||
 |---|---|
-|Size|100G (quota per user)|
-|Path|`/mnt/home/<GUID>`|
-|Use|Set up your environments and store all the scripts and data you need for your personal use.|
+|**Size**|100G (quota per user)|
+|**Path**|`/mnt/home/<GUID>`|
+|**Use**|Set up your environments and store all the scripts and data you need for your personal use.|
 
-|Size|100G (quota per user)|
-|Path|`/mnt/home/<GUID>`|
-|Use|Set up your environments and store all the scripts and data you need for your personal use.|
+|**Size**|100G (quota per user)|
+|**Path**|`/mnt/home/<GUID>`|
+|**Use**|Set up your environments and store all the scripts and data you need for your personal use.|
 
 #### Home Storage
 
