@@ -16,6 +16,7 @@ HPC can be built in in different configurations. This configuration is very popu
 ![Architecture Diagram](assets/quickstart_imgs/architecture.svg)
 
 The HPC is build of these components:
+
 - **Login Node**: This is the system all users interact with. If you want to interact with any of the other components, it has to be through the login node.
 - **Scheduler**: This is the brain of the cluster. All your scheduling and status requests from the login node go this system. 
 - **Compute Servers**: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have a allocation. 
