@@ -422,6 +422,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#connecting-via-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting via SSH
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1014,6 +1023,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#connecting-via-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting via SSH
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1101,43 +1119,32 @@
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>After you got your account, to access the system, you log into a login node. The login node is the central point of access to the cluster for all users. This server is not very powerful and should therefore not be used for computational work. Any computational work should go through a job allocation on the scheduler.</p>
 <h3 id="connection-information">Connection Information</h3>
-<p>You have to be connected to the Campus network either via cable in your office, eduroam or VPN.</p>
+<p>You have to be connected to the Campus network either via LAN, eduroam or VPN.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>Attribut</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Server</td>
-<td>headnode04.cent.gla.ac.uk</td>
-</tr>
-<tr>
-<td>Port</td>
-<td>22</td>
-</tr>
-<tr>
-<td>Username</td>
-<td>GUID</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>GUID Password</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>Hostname</strong>: headnode04.cent.gla.ac.uk</li>
+<li><strong>Username</strong>: <em>University of Glasgow GUID</em></li>
+<li><strong>Password</strong>: <em>GUID Password</em></li>
+</ul>
 </div>
 </div>
 </div>
+<h3 id="connecting-via-ssh">Connecting via SSH</h3>
+<p>You will need to use <code>SSH</code> to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled <code>SSH</code>utility of your device(If you are prompted for a password, it will not show up while typing):</p>
+<div class="highlight"><pre><span></span><code>ssh &lt;username&gt;@&lt;hostaname&gt;
+</code></pre></div>
+<p>We would recommend you use a SSH GUI client for regular access to the platform, as it allows you to save sessions, and <code>copy+paste</code> more easily. Example software are <a href="https://www.putty.org/">PuTTY</a> and <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, however you can use whatever you prefer. </p>
+<hr />
 <h2 id="data-management">Data Management</h2>
+<hr />
 <h2 id="scheduler">Scheduler</h2>
+<hr />
 <h2 id="software">Software</h2>
+<hr />
 <h2 id="support">Support</h2>
+<hr />
 
 
 
