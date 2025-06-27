@@ -40,7 +40,7 @@ You have to be connected to the Campus network either via LAN, eduroam or VPN.
 
 === "Central"
 
-    - **Hostname**: headnode04.cent.gla.ac.uk
+    - **Hostname**: `headnode04.cent.gla.ac.uk`
     - **Username**: *University of Glasgow GUID*
     - **Password**: *GUID Password*
 
@@ -56,6 +56,24 @@ We would recommend you use a SSH GUI client for regular access to the platform, 
 ---
 
 ## Data Management
+Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform.
+
+**This is not a trusted research environment**, therefore all research data must be anonymised prior to transferring it onto the system.
+
+### Storage Spaces
+
+|User Home||
+|---|---|
+|Size|100G (quota per user)|
+|Path|`/mnt/home/<GUID>`|
+|Use|Set up your environments and store all the scripts and data you need for your personal use.|
+
+#### Home Storage
+
+#### Shared Scratch
+#### Local Scratch
+
+### Transfer Data
 
 ---
 
