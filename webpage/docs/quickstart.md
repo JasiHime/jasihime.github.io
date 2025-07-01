@@ -105,11 +105,55 @@ Or you can use a graphical SFTP Client of choice, for example [WinSCP](https://w
 ---
 
 ## Scheduler
-The scheduler used is **Slurm Workload Manager**, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html). The information here is the configurations you will need to know to use the University of Glasgow HPC.
+The scheduler used is **Slurm Workload Manager**, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html). 
+
+The information here is the configurations you will need to know to use the University of Glasgow HPC.
+
+### Resources
+Compute servers, or also called nodes, can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
+
+=== Central
+
+    The Central HPC is very heterogeneous, meaning it is comprised of a vast variety of hardware! You can  get an overview of all servers and their available resources by running the command below on  the system:
+
+    ```
+    sinfo -o "%20n %10c %20m %30G"
+    ```
+
+    ??? info
+
+        - CPUS: Number of CPUs available on the node.
+        - MEMORY: Amount of memory / RAM available on the node in MB.
+        - GRES: GPU resources available on the node. `gpu:<type>:<amount>`.
 
 ### Partitions / Queues
+Partitions, also known as queues on other scheduling systems, are used to determine which nodes you want your job to run. 
+
+=== Central
+
+    |Name|Description|
+    |---|---|---|
+    |cpu|This is the *default* partition, meaning this is chosen when no partition is specified. It contains all CPU focused servers of the Cluster.|
+    |gpu|This partitions cotains all servers with GPU resources available. You can specify which type with the `--gres` parameter.|
+
 
 ### Parameters
+You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run `man sbatch` or `man srun` when logged into the system. 
+
+=== Central
+
+    |Parameter|Example|Description|
+    |---|---|---|
+    |`-J, --job-name=<jobname>`|`--job-name="Test-Job-1"`|Specify a name for the job. The specified name will appear along with the job id number when querying running jobs on the system. The default is the supplied executable program's name.|
+    |`-N, --nodes=<num>`|`--nodes=2`|Number of servers you want your job to run on. Use only if your code supports parallel processing.|
+    |`-c, --cpus-per-task=<num>`|`--cpus-per-task=8`|Request the number of CPUs to be allocated per process. This may be useful if the job is multithreaded and requires more than one CPU per task for optimal performance.|
+    |`--gres=gpu:<type>:<num>`|`--gres=gpu:gtx1080:1`|Specify the type and number of GPUs for your allocation.|
+    |`--mem=<num><unit>`|`--mem=16G`|Specify the real memory required per node. Default units are megabytes. Different units can be specified using the suffix [K|M|G].|
+    |`-p, --partition=<partition_names>`|`--partition=gpu`|Request a specific partition for the resource allocation. If the job can use more than one partition, specify their names in a comma separate list. If the parameter is not set it defaults to configured default partition.|
+    |`-t, --time=<dd-hh-mm-ss>`|`--time 00-01:00:00`|Set a limit on the total run time of the job allocation. When the time limit is reached, each task in each job step is sent a kill signal.|
+    |`--mail-user=<email>`|`--mail-user="example@example.co.uk"`|Email address to send notifications to. Only University of Glasgow managed emails are accepted.|
+    |`--mail-type=<type>`|`--mail-type="BEGIN,END,FAIL"`|Comma separated list of event types `--mail-user` gets notified for.  Valid type values are NONE, BEGIN, END, FAIL, RE‐QUEUE, ALL|
+
 
 ### 
 
