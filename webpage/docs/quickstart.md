@@ -82,6 +82,33 @@ Data is an important part of HPC. Where and how to store your data is important 
     |**Path**|`~/localscratch` or `/tmp/users/<GUID>`|
     |**Use**|This storage is local to the node and can’t be accessed outside of it. Read and write here for the best possible storage performance. If you drop files into the localscratch of the login node it won’t be available to you on the compute nodes, so the moving of data has to be part of your workflow /submission script. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
 
+=== "testi"
+
+    #### User Home
+
+    |||
+    |---|---|
+    |**Size**|100G (quota per user)|
+    |**Path**|`/mnt/home/<GUID>`|
+    |**Use**|Set up your environments and store all the scripts and data you need for your personal use.|
+
+    #### Shared User Scratch
+
+    |||
+    |---|---|
+    |**Size**|~180Tb (shared between all cluster users)|
+    |**Path**|`~/sharedscratch` or `/mnt/scratch/users/<GUID>`|
+    |**Use**|This storage is shared between all nodes. Read and write data that you need during your jobs. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
+
+    #### Local Node Scratch
+    
+    |||
+    |---|---|
+    |**Size**|700G|
+    |**Path**|`~/localscratch` or `/tmp/users/<GUID>`|
+    |**Use**|This storage is local to the node and can’t be accessed outside of it. Read and write here for the best possible storage performance. If you drop files into the localscratch of the login node it won’t be available to you on the compute nodes, so the moving of data has to be part of your workflow /submission script. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
+
+
 ### Transfer Data
 To transfer data from your local machine (or another system), you can use `SSH`. You can do this either with the `scp` command:
 
