@@ -112,7 +112,7 @@ The information here is the configurations you will need to know to use the Univ
 ### Resources
 Compute servers, or also called nodes, can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
 
-=== Central
+=== "Central"
 
     The Central HPC is very heterogeneous, meaning it is comprised of a vast variety of hardware! You can  get an overview of all servers and their available resources by running the command below on  the system:
 
@@ -129,7 +129,7 @@ Compute servers, or also called nodes, can carry different resource configuratio
 ### Partitions / Queues
 Partitions, also known as queues on other scheduling systems, are used to determine which nodes you want your job to run. 
 
-=== Central
+=== "Central"
 
     |Name|Description|
     |---|---|---|
@@ -140,7 +140,7 @@ Partitions, also known as queues on other scheduling systems, are used to determ
 ### Parameters
 You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run `man sbatch` or `man srun` when logged into the system. 
 
-=== Central
+=== "Central"
 
     |Parameter|Example|Description|
     |---|---|---|
