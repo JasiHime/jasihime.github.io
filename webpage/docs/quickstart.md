@@ -56,33 +56,17 @@ We would recommend you use a SSH GUI client for regular access to the platform, 
 ---
 
 ## Data Management
-Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform.
+Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform. 
 
-**This is not a trusted research environment**, therefore all research data must be anonymised prior to transferring it onto the system.
+All storage available is to be used for the duration of a your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. With each Team, you get 5TB of cloud storage. You can use Rclone to manage your data from MARS.
+
+!!! warning
+
+    **This is not a trusted research environment**, therefore all research data must be anonymised prior to transferring it onto the system.
 
 ### Storage Spaces
 
 === "Central"
-
-    |User Home||
-    |---|---|
-    |**Size**|100G (quota per user)|
-    |**Path**|`/mnt/home/<GUID>`|
-    |**Use**|Set up your environments and store all the scripts and data you need for your personal use.|
-
-    |Shared User Scratch||
-    |---|---|
-    |**Size**|~180Tb (shared between all cluster users)|
-    |**Path**|`~/sharedscratch` or `/mnt/scratch/users/<GUID>`|
-    |**Use**|This storage is shared between all nodes. Read and write data that you need during your jobs. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
-
-    |Local Node Scratch||
-    |---|---|
-    |**Size**|700G|
-    |**Path**|`~/localscratch` or `/tmp/users/<GUID>`|
-    |**Use**|This storage is local to the node and can’t be accessed outside of it. Read and write here for the best possible storage performance. If you drop files into the localscratch of the login node it won’t be available to you on the compute nodes, so the moving of data has to be part of your workflow /submission script. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
-
-=== "testi"
 
     #### User Home
 
@@ -108,7 +92,7 @@ Data is an important part of HPC. Where and how to store your data is important 
     |**Path**|`~/localscratch` or `/tmp/users/<GUID>`|
     |**Use**|This storage is local to the node and can’t be accessed outside of it. Read and write here for the best possible storage performance. If you drop files into the localscratch of the login node it won’t be available to you on the compute nodes, so the moving of data has to be part of your workflow /submission script. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
 
-
+ 
 ### Transfer Data
 To transfer data from your local machine (or another system), you can use `SSH`. You can do this either with the `scp` command:
 
@@ -118,13 +102,10 @@ scp <source file> <guid>@<hostname>:<target file>
 
 Or you can use a graphical SFTP Client of choice, for example [WinSCP](https://winscp.net). Use the connection details of the login node, mentioned above to connect.
 
-### Backup and Archive
-As storage on 
-
 ---
 
 ## Scheduler
-
+The scheduler used is **Slurm Workload Manager**, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html). The information here is the configurations you will need to know to use the University of Glasgow HPC.
 
 ### Partitions / Queues
 
