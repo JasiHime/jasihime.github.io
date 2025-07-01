@@ -453,6 +453,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Storage Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Home
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-user-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared User Scratch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-node-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Node Scratch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1120,6 +1153,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Storage Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Home
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-user-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared User Scratch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-node-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Node Scratch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1273,7 +1339,7 @@
 <p>Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform.</p>
 <p><strong>This is not a trusted research environment</strong>, therefore all research data must be anonymised prior to transferring it onto the system.</p>
 <h3 id="storage-spaces">Storage Spaces</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label><label for="__tabbed_2_2">testi</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table>
@@ -1324,6 +1390,77 @@
 <thead>
 <tr>
 <th>Local Node Scratch</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Size</strong></td>
+<td>700G</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>~/localscratch</code> or <code>/tmp/users/&lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Use</strong></td>
+<td>This storage is local to the node and can’t be accessed outside of it. Read and write here for the best possible storage performance. If you drop files into the localscratch of the login node it won’t be available to you on the compute nodes, so the moving of data has to be part of your workflow /submission script. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<h4 id="user-home">User Home</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Size</strong></td>
+<td>100G (quota per user)</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/mnt/home/&lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Use</strong></td>
+<td>Set up your environments and store all the scripts and data you need for your personal use.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="shared-user-scratch">Shared User Scratch</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Size</strong></td>
+<td>~180Tb (shared between all cluster users)</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>~/sharedscratch</code> or <code>/mnt/scratch/users/&lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Use</strong></td>
+<td>This storage is shared between all nodes. Read and write data that you need during your jobs. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!</td>
+</tr>
+</tbody>
+</table>
+<h4 id="local-node-scratch">Local Node Scratch</h4>
+<table>
+<thead>
+<tr>
+<th></th>
 <th></th>
 </tr>
 </thead>
