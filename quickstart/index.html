@@ -539,15 +539,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1239,15 +1230,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1438,9 +1420,9 @@
 <details class="info">
 <summary>Info</summary>
 <ul>
-<li>CPUS: Number of CPUs available on the node.</li>
-<li>MEMORY: Amount of memory / RAM available on the node in MB.</li>
-<li>GRES: GPU resources available on the node. <code>gpu:&lt;type&gt;:&lt;amount&gt;</code>.</li>
+<li><strong>CPUS:</strong> Number of CPUs available on the node.</li>
+<li><strong>MEMORY:</strong> Amount of memory / RAM available on the node in MB.</li>
+<li><strong>GRES:</strong> GPU resources available on the node. <code>gpu:&lt;type&gt;:&lt;amount&gt;</code>.</li>
 </ul>
 </details>
 </div>
@@ -1451,18 +1433,29 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>|Name|Description|
-|---|---|---|
-|cpu|This is the <em>default</em> partition, meaning this is chosen when no partition is specified. It contains all CPU focused servers of the Cluster.|
-|gpu|This partitions cotains all servers with GPU resources available. You can specify which type with the <code>--gres</code> parameter.|</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cpu</td>
+<td>This is the <em>default</em> partition, meaning this is chosen when no partition is specified. It contains all CPU focused servers of the Cluster.</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>This partitions cotains all servers with GPU resources available. You can specify which type with the <code>--gres</code> parameter.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <h3 id="parameters">Parameters</h3>
 <p>You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run <code>man sbatch</code> or <code>man srun</code> when logged into the system. </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Central</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -1519,10 +1512,6 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<h3 id="_1"></h3>
 <hr />
 <h2 id="software">Software</h2>
 <hr />
