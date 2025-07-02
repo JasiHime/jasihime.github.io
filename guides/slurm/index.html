@@ -372,6 +372,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/build-from-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Building Software from Source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/slurm-101/" class="md-nav__link">
         
   
@@ -830,6 +853,63 @@
 
 
 <h1 id="slurm">Slurm</h1>
+<p>You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run <code>man sbatch</code> or <code>man srun</code> when logged into the system. </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-J, --job-name=&lt;jobname&gt;</code></td>
+<td><code>--job-name="Test-Job-1"</code></td>
+<td>Specify a name for the job. The specified name will appear along with the job id number when querying running jobs on the system. The default is the supplied executable program's name.</td>
+</tr>
+<tr>
+<td><code>-N, --nodes=&lt;num&gt;</code></td>
+<td><code>--nodes=2</code></td>
+<td>Number of servers you want your job to run on. Use only if your code supports parallel processing.</td>
+</tr>
+<tr>
+<td><code>-c, --cpus-per-task=&lt;num&gt;</code></td>
+<td><code>--cpus-per-task=8</code></td>
+<td>Request the number of CPUs to be allocated per process. This may be useful if the job is multithreaded and requires more than one CPU per task for optimal performance.</td>
+</tr>
+<tr>
+<td><code>--gres=gpu:&lt;type&gt;:&lt;num&gt;</code></td>
+<td><code>--gres=gpu:gtx1080:1</code></td>
+<td>Specify the type and number of GPUs for your allocation.</td>
+</tr>
+<tr>
+<td><code>--mem=&lt;num&gt;&lt;unit&gt;</code></td>
+<td><code>--mem=16G</code></td>
+<td>Specify the real memory required per node. Default units are megabytes. Different units can be specified using the suffix [K</td>
+</tr>
+<tr>
+<td><code>-p, --partition=&lt;partition_names&gt;</code></td>
+<td><code>--partition=gpu</code></td>
+<td>Request a specific partition for the resource allocation. If the job can use more than one partition, specify their names in a comma separate list. If the parameter is not set it defaults to configured default partition.</td>
+</tr>
+<tr>
+<td><code>-t, --time=&lt;dd-hh-mm-ss&gt;</code></td>
+<td><code>--time 00-01:00:00</code></td>
+<td>Set a limit on the total run time of the job allocation. When the time limit is reached, each task in each job step is sent a kill signal.</td>
+</tr>
+<tr>
+<td><code>--mail-user=&lt;email&gt;</code></td>
+<td><code>--mail-user="example@example.co.uk"</code></td>
+<td>Email address to send notifications to. Only University of Glasgow managed emails are accepted.</td>
+</tr>
+<tr>
+<td><code>--mail-type=&lt;type&gt;</code></td>
+<td><code>--mail-type="BEGIN,END,FAIL"</code></td>
+<td>Comma separated list of event types <code>--mail-user</code> gets notified for.  Valid type values are NONE, BEGIN, END, FAIL, RE‐QUEUE, ALL</td>
+</tr>
+</tbody>
+</table>
 
 
 
