@@ -12,7 +12,7 @@ In the grid below we have quick links to content users are frequently looking fo
 
     Get access to HPC to start accelarating your compute work!
 
-    [:octicons-arrow-right-24: Getting an Account](user-docs/account-registration.md)
+    [:octicons-arrow-right-24: Getting an Account](account-registration.md)
 
 -   :octicons-rocket-16:{ .lg .middle } __Start your Work__
 
@@ -20,7 +20,7 @@ In the grid below we have quick links to content users are frequently looking fo
 
     This guide will help both novice and experienced users!
 
-    [:octicons-arrow-right-24: Quickstart](user-docs/quickstart.md)
+    [:octicons-arrow-right-24: Quickstart](quickstart.md)
 
 -   :material-hand-heart-outline:{ .lg .middle } __Need help?__
 
