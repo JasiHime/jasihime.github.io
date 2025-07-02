@@ -453,39 +453,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Storage Spaces">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-home" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Home
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-user-scratch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shared User Scratch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-node-scratch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local Node Scratch
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1173,39 +1140,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Storage Spaces">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-home" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Home
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-user-scratch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shared User Scratch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-node-scratch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local Node Scratch
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1333,8 +1267,11 @@
 <hr />
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>After you got your account, to access the system, you log into a login node. The login node is the central point of access to the cluster for all users. This server is not very powerful and should therefore not be used for computational work. Any computational work should go through a job allocation on the scheduler.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You have to be connected to the Campus network either via LAN, eduroam or VPN to access the cluster.</p>
+</div>
 <h3 id="connection-information">Connection Information</h3>
-<p>You have to be connected to the Campus network either via LAN, eduroam or VPN.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1354,16 +1291,16 @@
 <hr />
 <h2 id="data-management">Data Management</h2>
 <p>Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform. </p>
-<p>All storage available is to be used for the duration of a your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. With each Team, you get 5TB of cloud storage. You can use Rclone to manage your data from MARS.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>This is not a trusted research environment</strong>, therefore all research data must be anonymised prior to transferring it onto the system.</p>
-</div>
+<p>All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. You can use Rclone to manage your data from MARS.</p>
 <h3 id="storage-spaces">Storage Spaces</h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<h4 id="user-home">User Home</h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>This is not a trusted research environment</strong>, therefore all research data must be anonymised prior to transferring it onto the system.</p>
+</div>
+<p><strong>User Home</strong></p>
 <table>
 <thead>
 <tr>
@@ -1386,7 +1323,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="shared-user-scratch">Shared User Scratch</h4>
+<p><strong>Shared User Scratch</strong></p>
 <table>
 <thead>
 <tr>
@@ -1409,7 +1346,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="local-node-scratch">Local Node Scratch</h4>
+<p><strong>Local Node Scratch</strong></p>
 <table>
 <thead>
 <tr>
@@ -1443,9 +1380,9 @@
 <hr />
 <h2 id="scheduler">Scheduler</h2>
 <p>The scheduler used is <strong>Slurm Workload Manager</strong>, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works <a href="https://slurm.schedmd.com/quickstart.html">Quick Start User Guide</a>. </p>
-<p>The information here is the configurations you will need to know to use the University of Glasgow HPC.</p>
+<p>The information here is the configurations you will need to know to use the cluster.</p>
 <h3 id="resources">Resources</h3>
-<p>Compute servers, or also called nodes, can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.</p>
+<p>Compute servers - also referred to as nodes - can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1453,7 +1390,7 @@
 <div class="highlight"><pre><span></span><code>sinfo -o &quot;%20n %10c %20m %30G&quot;
 </code></pre></div>
 <details class="info">
-<summary>Info</summary>
+<summary>Explaination of command output</summary>
 <ul>
 <li><strong>CPUS:</strong> Number of CPUs available on the node.</li>
 <li><strong>MEMORY:</strong> Amount of memory / RAM available on the node in MB.</li>
@@ -1502,9 +1439,6 @@
 </div>
 <h3 id="environment-modules">Environment Modules</h3>
 <p>These are software that is centrally installed by the admin team and can be used across the cluster. The full manual of the software from the developers can be found <a href="https://modules.readthedocs.io/en/latest/">here</a>.</p>
-<p>To get a list of all available modules, you can run this command on the cluster:</p>
-<div class="highlight"><pre><span></span><code>module available
-</code></pre></div>
 <p>The most used commands are listed below:</p>
 <table>
 <thead>
@@ -1514,6 +1448,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>module available</code></td>
+<td>List all available modules on the system.</td>
+</tr>
 <tr>
 <td><code>module load</code></td>
 <td>Activate module for use in your current session.</td>
