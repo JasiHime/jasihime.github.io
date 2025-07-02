@@ -127,7 +127,11 @@ Compute servers, or also called nodes, can carry different resource configuratio
         - **GRES:** GPU resources available on the node. `gpu:<type>:<amount>`.
 
 ### Partitions / Queues
-Partitions, also known as queues on other scheduling systems, are used to determine which nodes you want your job to run. 
+Partitions, also known as queues on other scheduling systems, are used to determine which nodes you want your job to run. To see the partition configuration of the HPC you are using run this command:
+
+ ```
+ scontrol show partition
+ ```
 
 === "Central"
 
@@ -136,28 +140,39 @@ Partitions, also known as queues on other scheduling systems, are used to determ
     |cpu|This is the *default* partition, meaning this is chosen when no partition is specified. It contains all CPU focused servers of the Cluster.|
     |gpu|This partitions cotains all servers with GPU resources available. You can specify which type with the `--gres` parameter.|
 
-
-### Parameters
-You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run `man sbatch` or `man srun` when logged into the system. 
-
-|Parameter|Example|Description|
-|---|---|---|
-|`-J, --job-name=<jobname>`|`--job-name="Test-Job-1"`|Specify a name for the job. The specified name will appear along with the job id number when querying running jobs on the system. The default is the supplied executable program's name.|
-|`-N, --nodes=<num>`|`--nodes=2`|Number of servers you want your job to run on. Use only if your code supports parallel processing.|
-|`-c, --cpus-per-task=<num>`|`--cpus-per-task=8`|Request the number of CPUs to be allocated per process. This may be useful if the job is multithreaded and requires more than one CPU per task for optimal performance.|
-|`--gres=gpu:<type>:<num>`|`--gres=gpu:gtx1080:1`|Specify the type and number of GPUs for your allocation.|
-|`--mem=<num><unit>`|`--mem=16G`|Specify the real memory required per node. Default units are megabytes. Different units can be specified using the suffix [K|M|G].|
-|`-p, --partition=<partition_names>`|`--partition=gpu`|Request a specific partition for the resource allocation. If the job can use more than one partition, specify their names in a comma separate list. If the parameter is not set it defaults to configured default partition.|
-|`-t, --time=<dd-hh-mm-ss>`|`--time 00-01:00:00`|Set a limit on the total run time of the job allocation. When the time limit is reached, each task in each job step is sent a kill signal.|
-|`--mail-user=<email>`|`--mail-user="example@example.co.uk"`|Email address to send notifications to. Only University of Glasgow managed emails are accepted.|
-|`--mail-type=<type>`|`--mail-type="BEGIN,END,FAIL"`|Comma separated list of event types `--mail-user` gets notified for.  Valid type values are NONE, BEGIN, END, FAIL, RE‐QUEUE, ALL|
-
 ---
 
 ## Software
 
+=== "Central"
+
+    On Central, users are responsible for their own software. Though we offer some tools through modules, that make it easier for users to manage software.
+
+### Environment Modules
+These are software that is centrally installed by the admin team and can be used across the cluster. The full manual of the software from the developers can be found [here](https://modules.readthedocs.io/en/latest/).
+
+To get a list of all available modules, you can run this command on the cluster:
+
+```
+module available
+```
+
+The most used commands are listed below:
+
+|Command|Description|
+|---|---|
+|`module load `|Activate module for use in your current session.|
+|`module unload <name>`|Deactivate module from your current session.|
+|`module search <search_term>`|Search for modules by name or description.|
+|`module list`|List all active modules in your current session.|
+|`module purge`|Deactivate all modules loaded in your current session.|
+
 ---
 
 ## Support
+The RCaaS HPC Admin team is happy to help where possible, no matter if you are a novice or experienced user. Feel free to get in touch! All our services can be found through Ivanti:
+
+[Ivanti Help Desk](https://glasgow.saasiteu.com/Modules/SelfService/#serviceCatalog/request/AFB25E75ED5E40E4BDF84FDEE6108945){ .md-button }
+
 
 ---
