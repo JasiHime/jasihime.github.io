@@ -58,10 +58,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -113,7 +115,43 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2C5.13 2 2 5.13 2 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7M6 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H6zm13-8h-2l-3.2 9h1.9l.7-2h3.2l.7 2h1.9zm-2.15 5.65L18 15l1.15 3.65z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -383,6 +421,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Building Software from Source
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -394,6 +445,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download source code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile the code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjust-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjust Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -838,6 +944,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download source code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile the code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjust-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjust Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -853,6 +1003,82 @@
 
 
 <h1 id="building-software-from-source">Building Software from Source</h1>
+<p>Open source software developers, often give you the option to build their software from the source code. This allows you to install a software yourself with all the customisations fit for your work.</p>
+<p>These installations are very individual to each software, so pay close attention to the developers documentation and installation manual. The page here is to explain some core concepts and to build your first installation from source.</p>
+<p>For our example we will be building <code>python3</code> from source. The instructions are from the README.md file of the [cpython repository(https://github.com/python/cpython?tab=readme-ov-file#build-instructions())]. Let’s create a directory where we want the installation to sit. This is going to be the directory where all your binaries and application files for python3 will reside:</p>
+<div class="highlight"><pre><span></span><code>mkdir --parents ~/mysoftware/python3/3.12.2
+</code></pre></div>
+<p>For larger installations we recommend doing them within an interactive batch job if possible!</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Sometimes software requires preinstalled dependencies to be built. These packages are often called <code>*-devel</code> and contain the header files for common libraries used during the build process. But it can also be other dependant software like <code>openMPI</code> or <code>nvidia-cuda</code>. In some cases you might be able to just load the appropriate modules on the cluster.</p>
+<p>As you don’t have <code>sudo</code> / <code>root</code> access on the clusterARS, you won’t be able to install any dependencies as easily through the package manager (<code>dnf</code>, <code>yum</code>, <code>apt</code>), as some installation manuals make you believe. To get around this you have some options:</p>
+<ul>
+<li>You can also build all the dependencies yourself from source.</li>
+<li>You can make use of conda environments or containers.</li>
+<li>You can contact the RCaaS HPC admin team for help, who can look to install missing packages.</li>
+</ul>
+<p>For our <code>python3</code> example, no dependencies have to be installed.</p>
+<h2 id="download-source-code">Download source code</h2>
+<p>Source code is often made available through a tarball. This is a usually compressed archive containing all the source code. To download this, you can use the <code>wget</code> utility followed by the link to the tarball file. In our case this is:</p>
+<div class="highlight"><pre><span></span><code>wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
+</code></pre></div>
+<p>To then unpack this archive, you can use the <code>tar</code> utility:</p>
+<div class="highlight"><pre><span></span><code>tar --extract --file Python-3.13.2.tgz
+</code></pre></div>
+<p>Please be aware, that archives might be <code>.zip</code> and therefore require the <code>unzip</code> utility to unpack. Some software might also expect you to download their source from a git repository. For this you can use the <code>git</code> utility.</p>
+<h2 id="compile-the-code">Compile the code</h2>
+<p>Python3 is using the <a href="https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html">GNU Autotools</a> as its build tool, which is very popular. Another one you might come across quite often is <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">Cmake</a>. Just follow the developers installation manual.</p>
+<p>First we move into the directory we unpacked above:</p>
+<div class="highlight"><pre><span></span><code>cd Python-3.13.2
+</code></pre></div>
+<p>Now, we will prepare the <code>Makefile</code>, using the <code>.configure</code> script provided by the developers. This step will ensure dependencies are satisfied and sets desired build options. This is where you can customise your installation!</p>
+<p>To get a list of all available build options you can run:</p>
+<div class="highlight"><pre><span></span><code>./configure --help
+</code></pre></div>
+<p>You will see there is a big list! You can read up on what all of these options mean and decide for yourself what you want to change. For our example, there is only one we will be using, <code>--prefix</code>. This parameter decides where our installation will reside. As a default it will try to install the software in the system directories, which only <code>root</code> has access to. This is the parameter you will most likely need to adjust for all your installations, to ensure you can do installations without requiring elevated privileges.</p>
+<p>For our prefix, we choose the directory we created at the beginning:</p>
+<div class="highlight"><pre><span></span><code>./configure --prefix=$HOME/mysoftware/python3/3.12.2
+</code></pre></div>
+<p>Now we can run <code>make</code>, to compile the software based on the information gathered in the <code>Makefile</code>. This step can take a long time depending how complicated the software you are building is:</p>
+<div class="highlight"><pre><span></span><code>make
+</code></pre></div>
+<p>As a last step, this will copy the binaries and other application files into the directory we set as our <code>--prefix</code>, from where we can then make use of them:</p>
+<div class="highlight"><pre><span></span><code>make install
+</code></pre></div>
+<p>To test if our installation was successful, lets run the <code>python3</code> binary we built!</p>
+<div class="highlight"><pre><span></span><code>$ $HOME/mysoftware/python3/bin/python3 --version
+Python 3.13.3
+</code></pre></div>
+<p>If we are confident our installation was successful, we can delete all our build files and source code, to save storage:</p>
+<div class="highlight"><pre><span></span><code>rm -rf Python-3.13.2
+</code></pre></div>
+<h2 id="adjust-environment">Adjust Environment</h2>
+<p>To make the application files available in your environment, you have to change some environment variables. This process can be done using modules, the same way you make the system managed ones available, you can expand the software catalogue with your own.</p>
+<p>For our example we will do it manually. The environment variables are set as such:</p>
+<div class="highlight"><pre><span></span><code>export &lt;var-name&gt;=&quot;&lt;path1&gt;:&lt;path2&gt;:&lt;path3&gt;&quot;
+</code></pre></div>
+<p>For all these variables, it works on a first match basis. The system goes through all paths listed and the first match it finds will be the executable run. So to ensure, our own installation is used before the system installation, our newly added paths have to be before the system paths. Ensure, to always add the current <code>$&lt;var-name&gt;</code> when updating your variables, to ensure you don’t lose access to any software!</p>
+<p>For the executables, we will add the created bin directory to the <code>$PATH</code> variable:</p>
+<div class="highlight"><pre><span></span><code>export PATH=&quot;$HOME/mysoftware/python3/3.12.2/bin:$PATH&quot;
+</code></pre></div>
+<p>For our libraries, we add the lib path to the <code>$LD_LIBRARY_PATH</code> variable:</p>
+<div class="highlight"><pre><span></span><code>export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/3.12.2/lib:$LD_LIBRARY_PATH&quot;
+</code></pre></div>
+<p>And to make sure we have the right manual pages for our version we add the path to the <code>man</code> pages to <code>$MANPATH</code>:</p>
+<div class="highlight"><pre><span></span><code>export MANPATH=&quot;$HOME/mysoftware/python3/3.12.2/share/man:$MANPATH&quot;
+</code></pre></div>
+<p>Now your installation should be seamlessly included in your software stack.</p>
+<div class="highlight"><pre><span></span><code>$ python3 --version
+Python 3.12.2
+</code></pre></div>
+<p>If you don’t want this to get lost when you next log in, you can add it to your <code>~/.bashrc</code> file.</p>
+<div class="highlight"><pre><span></span><code>$ cat ~/.bashrc
+...
+export PATH=&quot;$HOME/mysoftware/python3/bin:$PATH&quot;
+export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/lib:$LD_LIBRARY_PATH&quot;
+export MANPATH=&quot;$HOME/mysoftware/python3/share/man:$MANPATH&quot;
+...
+</code></pre></div>
 
 
 
