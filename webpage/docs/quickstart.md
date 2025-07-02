@@ -35,8 +35,10 @@ Scheduling is a complicated matter, and multiple factors play into the priority 
 ## Access the Cluster
 After you got your account, to access the system, you log into a login node. The login node is the central point of access to the cluster for all users. This server is not very powerful and should therefore not be used for computational work. Any computational work should go through a job allocation on the scheduler.
 
+!!! info 
+    You have to be connected to the Campus network either via LAN, eduroam or VPN to access the cluster.
+
 ### Connection Information
-You have to be connected to the Campus network either via LAN, eduroam or VPN.
 
 === "Central"
 
@@ -58,17 +60,19 @@ We would recommend you use a SSH GUI client for regular access to the platform, 
 ## Data Management
 Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform. 
 
-All storage available is to be used for the duration of a your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. With each Team, you get 5TB of cloud storage. You can use Rclone to manage your data from MARS.
+All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. You can use Rclone to manage your data from MARS.
 
-!!! warning
-
-    **This is not a trusted research environment**, therefore all research data must be anonymised prior to transferring it onto the system.
 
 ### Storage Spaces
 
 === "Central"
 
-    #### User Home
+    !!! warning
+
+        **This is not a trusted research environment**, therefore all research data must be anonymised prior to transferring it onto the system.
+
+
+    **User Home**
 
     |||
     |---|---|
@@ -76,7 +80,7 @@ All storage available is to be used for the duration of a your work. It is not e
     |**Path**|`/mnt/home/<GUID>`|
     |**Use**|Set up your environments and store all the scripts and data you need for your personal use.|
 
-    #### Shared User Scratch
+    **Shared User Scratch**
 
     |||
     |---|---|
@@ -84,7 +88,7 @@ All storage available is to be used for the duration of a your work. It is not e
     |**Path**|`~/sharedscratch` or `/mnt/scratch/users/<GUID>`|
     |**Use**|This storage is shared between all nodes. Read and write data that you need during your jobs. Please ensure to clean up your scratch space after you are done processing your job, to make the space available for other users to use!|
 
-    #### Local Node Scratch
+    **Local Node Scratch**
     
     |||
     |---|---|
@@ -107,10 +111,10 @@ Or you can use a graphical SFTP Client of choice, for example [WinSCP](https://w
 ## Scheduler
 The scheduler used is **Slurm Workload Manager**, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html). 
 
-The information here is the configurations you will need to know to use the University of Glasgow HPC.
+The information here is the configurations you will need to know to use the cluster.
 
 ### Resources
-Compute servers, or also called nodes, can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
+Compute servers - also referred to as nodes - can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
 
 === "Central"
 
@@ -120,7 +124,7 @@ Compute servers, or also called nodes, can carry different resource configuratio
     sinfo -o "%20n %10c %20m %30G"
     ```
 
-    ??? info
+    ??? info "Explaination of command output"
 
         - **CPUS:** Number of CPUs available on the node.
         - **MEMORY:** Amount of memory / RAM available on the node in MB.
@@ -151,16 +155,11 @@ Partitions, also known as queues on other scheduling systems, are used to determ
 ### Environment Modules
 These are software that is centrally installed by the admin team and can be used across the cluster. The full manual of the software from the developers can be found [here](https://modules.readthedocs.io/en/latest/).
 
-To get a list of all available modules, you can run this command on the cluster:
-
-```
-module available
-```
-
 The most used commands are listed below:
 
 |Command|Description|
 |---|---|
+|`module available`|List all available modules on the system.|
 |`module load `|Activate module for use in your current session.|
 |`module unload <name>`|Deactivate module from your current session.|
 |`module search <search_term>`|Search for modules by name or description.|
