@@ -10,7 +10,7 @@ In the grid below we have quick links to content users are frequently looking fo
 
     ---
 
-    Get access to HPC to start accelarating your compute work!
+    Start accelarating your compute work!
 
     [:octicons-arrow-right-24: Getting an Account](account-registration.md)
 

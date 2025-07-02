@@ -13,21 +13,21 @@ theme:
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/lightbulb-auto
+        icon: material/brightness-auto
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: 'teal'
       accent: 'teal'
       toggle:
-        icon: material/lightbulb-outline
+        icon: material/brightness-5
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: 'teal'
       accent: 'teal'
       toggle:
-        icon: material/lightbulb
+        icon: material/brightness-7
         name: Switch to system preference
 markdown_extensions:
   - pymdownx.superfences
