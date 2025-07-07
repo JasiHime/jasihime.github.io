@@ -1121,14 +1121,10 @@
 <p>The full documentation of Rclone can be found <a href="https://rclone.org/docs/">here</a>.</p>
 <h2 id="encrypt-configuration">Encrypt configuration</h2>
 <p>To keep all your information safe, you should encrypt your rclone configuration. From there on, you will have to use a password to use rclone, so be sure to store your password in a safe place!</p>
-<ol>
-<li>Enter configuration manager:</li>
-</ol>
+<p>Enter configuration manager:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rclone config
 </span></code></pre></div>
-<ol>
-<li>Enter <code>s</code> to set confoguration password and confirm by entering <code>a</code>:</li>
-</ol>
+<p>Enter <code>s</code> to set confoguration password and confirm by entering <code>a</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>No remotes found, make a new one?
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>n) New remote
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>s) Set configuration password
@@ -1140,18 +1136,14 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>q) Quit to main menu
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>a/q&gt; a
 </span></code></pre></div>
-<ol>
-<li>Enter your password. Keep in mind, that the password will not be shown in the console:</li>
-</ol>
+<p>Enter your password. Keep in mind, that the password will not be shown in the console:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Enter NEW configuration password:
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>password: &lt;your password won’t show when entered&gt;
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Confirm NEW configuration password:
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>password: &lt;your password won’t show when entered&gt;
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Password set
 </span></code></pre></div>
-<ol>
-<li>You can now leave the configuration manager by entering <code>q</code>:</li>
-</ol>
+<p>You can now leave the configuration manager by entering <code>q</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Your configuration is encrypted.
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>c) Change Password
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>u) Unencrypt configuration
@@ -1160,38 +1152,28 @@
 </span></code></pre></div>
 <h2 id="setup-for-teams-storage">Setup for Teams storage</h2>
 <p>As Teams / OneDrive / SharePoint is the University of Glasgow’s official cloud storage, we’ll walk through on how to configure a remote connection to a Microsoft Team storage through rclone. Manuals for other connections can be found in the official documentation of Rclone.</p>
-<ol>
-<li>Enter configuration manager:</li>
-</ol>
+<p>Enter configuration manager:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone config
 </span></code></pre></div>
-<ol>
-<li>Create a new remote connection by entering <code>n</code>:</li>
-</ol>
+<p>Create a new remote connection by entering <code>n</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>No remotes found, make a new one?
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>n) New remote
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>s) Set configuration password
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>q) Quit config
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>n/s/q&gt; n
 </span></code></pre></div>
-<ol>
-<li>Choose a recognisable name for your remote connection. Something like "Teams_<Team-Name>":</li>
-</ol>
+<p>Choose a recognisable name for your remote connection. Something like "Teams_<Team-Name>":</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Enter name for new remote.
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>name&gt; Teams_HPC-Admin
 </span></code></pre></div>
-<ol>
-<li>After you will get a list of connection types. For Teams use "Microsoft OneDrive" by entering <code>onedrive</code>:</li>
-</ol>
+<p>After you will get a list of connection types. For Teams use "Microsoft OneDrive" by entering <code>onedrive</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>…
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>26 / Microsoft OneDrive
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   \ (onedrive)
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>…
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Storage&gt; onedrive
 </span></code></pre></div>
-<ol>
-<li>For the next four steps just continue by pressing "return" and choosing the default option:</li>
-</ol>
+<p>For the next four steps just continue by pressing "return" and choosing the default option:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Option client_id.
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>OAuth Client Id.
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Leave blank normally.
@@ -1223,9 +1205,7 @@
 </span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>n) No (default)
 </span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>y/n&gt;
 </span></code></pre></div>
-<ol>
-<li>To create your authentication token, we use the browser on your personal device, so enter <code>n</code>:</li>
-</ol>
+<p>To create your authentication token, we use the browser on your personal device, so enter <code>n</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Use web browser to automatically authenticate rclone with remote?
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a> * Say Y if the machine running rclone has a web browser you can use
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a> * Say N if running rclone on a (remote) machine without web browser access
@@ -1235,16 +1215,12 @@
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>n) No
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>y/n&gt; n
 </span></code></pre></div>
-<ol>
-<li>On your local laptop, download rclone from the official website: <a href="https://rclone.org/downloads/">Download</a>.</li>
-<li>Extract the downloaded .zip archive and start a shell from that directory. On Windows you can do it easily by clicking into the navigation, typing <code>cmd</code> and pressing "return".</li>
-<li>Within your local console run the following command:</li>
-</ol>
+<p>On your local laptop, download rclone from the official website: <a href="https://rclone.org/downloads/">Download</a>.</p>
+<p>Extract the downloaded .zip archive and start a shell from that directory. On Windows you can do it easily by clicking into the navigation, typing <code>cmd</code> and pressing "return".</p>
+<p>Within your local console run the following command:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone authorize &quot;onedrive&quot;
 </span></code></pre></div>
-<ol>
-<li>This will open a browser on your device. If you have a UofG managed device, you should be logged in automatically. If not, log into your UofG account (GUID).</li>
-</ol>
+<p>This will open a browser on your device. If you have a UofG managed device, you should be logged in automatically. If not, log into your UofG account (GUID).</p>
 <p>After you give rclone the required permissions on your account, you should get a "Success!" message in the browser. Switch back to your local console and copy the access_token that was printed into the console.</p>
 <p>You can now close your local console and delete the rclone files from your laptop, if you don’t plan to set up more remote connections.</p>
 <p>Back in your MARS console, paste the access_token and press "return":</p>
