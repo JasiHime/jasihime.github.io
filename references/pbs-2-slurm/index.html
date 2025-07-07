@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../build-from-source/">
+        <link rel="prev" href="../../guides/slurm/">
       
       
-        <link rel="next" href="../unix-101/">
+        <link rel="next" href="../submission-script-templates/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Slurm for Beginners - UofG HPC</title>
+        <title>PBS to Slurm Cheat Sheet - UofG HPC</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-for-beginners" class="md-skip">
+        <a href="#pbs-to-slurm-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slurm for Beginners
+              PBS to Slurm Cheat Sheet
             
           </span>
         </div>
@@ -369,20 +369,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -398,7 +396,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -412,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-from-source/" class="md-nav__link">
+      <a href="../../tutorials/build-from-source/" class="md-nav__link">
         
   
   
@@ -432,32 +430,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Slurm for Beginners
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tutorials/slurm-101/" class="md-nav__link">
         
   
   
@@ -468,62 +444,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-1-scheduler" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson 1: Scheduler
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-2-interactive-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson 2: Interactive Job
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-3-batch-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson 3: Batch Job
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-4-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson 4: Monitoring
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -536,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix-101/" class="md-nav__link">
+      <a href="../../tutorials/unix-101/" class="md-nav__link">
         
   
   
@@ -746,18 +666,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -773,7 +695,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             References
@@ -784,10 +706,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../references/pbs-2-slurm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PBS to Slurm Cheat Sheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -798,6 +742,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -810,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references/submission-script-templates/" class="md-nav__link">
+      <a href="../submission-script-templates/" class="md-nav__link">
         
   
   
@@ -1019,36 +1010,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lesson-1-scheduler" class="md-nav__link">
+  <a href="#user-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Lesson 1: Scheduler
+      User Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesson-2-interactive-job" class="md-nav__link">
+  <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Lesson 2: Interactive Job
+      Environment Variables
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesson-3-batch-job" class="md-nav__link">
+  <a href="#job-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Lesson 3: Batch Job
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-4-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson 4: Monitoring
+      Job Parameters
     </span>
   </a>
   
@@ -1070,150 +1052,163 @@
 
 
 
-<h1 id="slurm-for-beginners">Slurm for Beginners</h1>
-<p>This small tutorial should give you a start to the world of Slurm! If you have any questions or issues, feel free to contact us! We help novice and expert users alike to get settled on MARS.</p>
-<p>If you are not familiar with the UNIX console, please do the UNIX Tutorial for Beginners first.</p>
-<p>For this whole tutorial you will find code snippets, these are displayed as interactions on a console. Lines with a preceding $ are the commands entered, ones without, are the output of these commands.</p>
-<div class="highlight"><pre><span></span><code>$ &lt;command-entered-by-user&gt;
-&lt;command-output&gt;
-</code></pre></div>
-<h2 id="lesson-1-scheduler">Lesson 1: Scheduler</h2>
-<p>The Scheduler, is the program running on the cluster, that schedules your jobs to be run on the resources available within the cluster. It ensures fair usage, and should under no circumstances be bypassed. In the case of the Central HPC, the scheduler is Slurm.</p>
-<p>Look at what resources you have available to you on the cluster, using the Slurm <code>sinfo</code> command. (The output displayed below is shortened)</p>
-<div class="highlight"><pre><span></span><code>$ sinfo -o &quot;%n %c %m %G&quot; | column -t
-HOSTNAMES  CPUS  MEMORY   GRES
-node021     64    514048   (null)
-node022     64    515072   (null)
-node023     64    515072   (null)
-...
-</code></pre></div>
-<p>The nodes are grouped into partitions, this is a way to define what type of machine you want to work with. They are sometimes also referred to as queues. You can list all available partitions also using the <code>sinfo</code> command:</p>
-<div class="highlight"><pre><span></span><code>$ sinfo -o &quot;%P %D %N&quot; | column -t
-PARTITION  NODES  NODELIST
-nodes*     10     node[01-10]
-gpu        3      gpu[01-20]
-</code></pre></div>
-<h2 id="lesson-2-interactive-job">Lesson 2: Interactive Job</h2>
-<p>Interactive jobs are great to install software, prepare your environment or debug your script. It is also a good point to start to engage with HPC. But please, for any serious or larger work, use batch jobs. More on those in Lesson 3!</p>
-<p>You can start an interactive job using the <code>srun</code> command. You can tell, you are on a different server by the prompt, which should now feature the name of a compute node:</p>
-<div class="highlight"><pre><span></span><code>[login1]$ srun --pty bash
-[node01]$
-</code></pre></div>
-<p>Similar from how you switched from your PC via <code>ssh</code> to the login node, we now switched from the login node to the compute node using Slurm.</p>
-<p>In this session, we can start doing computational work. As an example, we will run some python3 code.</p>
-<ol>
-<li>
-<p>Load the python module
-<div class="highlight"><pre><span></span><code>$ module load apps/python3
-</code></pre></div></p>
-</li>
-<li>
-<p>Run python3
-<div class="highlight"><pre><span></span><code>$ python3
-</code></pre></div></p>
-</li>
-<li>
-<p>Import python libraries
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; import os
-</code></pre></div></p>
-</li>
-<li>
-<p>Get Slurm node name
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; node = os.getenv(&quot;SLURMD_NODENAME&quot;)
-</code></pre></div></p>
-</li>
-<li>
-<p>Open a new text file
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; myfile = open(&quot;demofile.txt&quot;, &quot;w&quot;)
-</code></pre></div></p>
-</li>
-<li>
-<p>Write into the text file
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; myfile.write(&quot;I am doing compute work on &quot; + node)
-</code></pre></div></p>
-</li>
-<li>
-<p>Exit python3
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; exit()
-</code></pre></div></p>
-</li>
-</ol>
-<p>Look at the file you just created using <code>cat</code>. You can see it used the name of the node we are working on in the output.</p>
-<div class="highlight"><pre><span></span><code>$ cat demofile.txt
-I am doing compute work on node01
-</code></pre></div>
-<p>This is our interactive job done, lets close our session with the exit command. This should bring us back to the login node, as indicated by the prompt again:</p>
-<div class="highlight"><pre><span></span><code>$ exit
-exit
-$
-</code></pre></div>
-<h2 id="lesson-3-batch-job">Lesson 3: Batch Job</h2>
-<p>If you are thinking the previous lesson was quite tedious and not very convenient, you will like batch job submissions.</p>
-<p>First, we have to save our python code into a file. For this create a file with the <code>.py</code> ending and add the lines we executed in python above in the interactive job. To make sure the output of our script is unique we will add the JobID as an identifier to the output file of the script.</p>
-<p>You can create and edit files using either <code>vi</code> or <code>nano</code>, whatever is more comfortable to you. Nano is the easier of the two, so if you are unfamiliar, we recommend using it. To exit and save in Nano do <code>ctrl+X → Y → Enter</code>.</p>
-<p><div class="highlight"><pre><span></span><code>$ nano myPythonCode.py
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>import os
-node = os.getenv(&quot;SLURMD_NODENAME&quot;)
-jobid = os.getenv(&quot;SLURM_JOBID&quot;)
-myfile = open(&quot;demofile-&quot; + jobid + &quot;.txt&quot;, &quot;w&quot;)
-myfile.write(&quot;I am doing compute work on &quot; + node)
-exit()
-</code></pre></div></p>
-<p>Now to schedule our job with Slurm , we need to create a job script. You can use a template from here Slurm Job Script Templates</p>
-<p>Under the “Loading Modules” subtitle add the required software, like in the interactive job example:</p>
-<div class="highlight"><pre><span></span><code>…
-############# LOADING MODULES (optional) #############
-module load apps/python3
-…
-</code></pre></div>
-<p>In the “My Code” section run the script you saved earlier by providing it as a parameter to the python3 executable:</p>
-<div class="highlight"><pre><span></span><code>…
-############# MY CODE #############
-python3 myPythonCode.py
-</code></pre></div>
-<p>Now you can submit your job using the <code>sbatch</code> utility and the path to the script. You will get a JobID in return, remember this to find your output later:</p>
-<div class="highlight"><pre><span></span><code>$ sbatch myPythonJob.sh
-Submitted batch job &lt;JobID&gt;
-</code></pre></div>
-<p>After the job has finished, within your current working directory you should find an output file, which contains the <code>STDOUT</code> and an error file, which contains the <code>STDERR</code> of your job session. In addition, the file your python script created should also be there. Since your home storage is shared across all servers, you can see the output of your scripts in real time from the login node, even if the job ran on a compute node:</p>
-<div class="highlight"><pre><span></span><code>$ ls -l
-myjob-&lt;JobID&gt;.out
-myjob-&lt;JobID&gt;.err
-demofile-&lt;JobID&gt;.txt
-</code></pre></div>
-<p>Check the output of these files. If all went as planned, the error file should be empty.</p>
-<p>You can run this job as many times as you want by just using the sbatch command. Like this you have access to the power of the HPC compute nodes, without ever having to log into one yourself.</p>
-<h2 id="lesson-4-monitoring">Lesson 4: Monitoring</h2>
-<p>You can see all running jobs on the system using the <code>squeue</code> command. If you only want to see your own jobs, you can specify your username with the <code>-u</code> parameter. If you only want to see a specific job, you can use the <code>-j</code> parameter followed by your JobID.</p>
-<div class="highlight"><pre><span></span><code>$ squeue
-$ squeue -u &lt;yourUsername&gt;
-$ squeue -j &lt;JobID&gt;
-</code></pre></div>
-<p>The output is as follows:</p>
-<ul>
-<li><em>JOBID</em>: Unique identifier of the job. Counts up from 1 being the first job ever queued.</li>
-<li><em>PARTITION</em>: Scheduler partition the job is queued into.</li>
-<li><em>NAME</em>: Name of the job as defined by --job-name in your submission or your script name.</li>
-<li><em>USER</em>: User who submitted the job to the scheduler.</li>
-<li><em>ST</em>: Status of the job: R=Running, PD=Pending.</li>
-<li><em>TIME</em>: Time the job has been running for.</li>
-<li><em>NODES</em>: Number of nodes.</li>
-<li><em>NODELIST</em>: List of names of allocated nodes.</li>
-</ul>
-<p>Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the sacct command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the <code>-o</code> parameter followed by a list of Job-Accounting-Fields.</p>
-<p>A list of all available Job-Accounting-Fields can be found here: sacct manual</p>
-<p>Below is an example that gives you an overview of the requested resources for a job. You should see, these are the values you provided in the “SLURM SETTINGS” section of the script:</p>
-<div class="highlight"><pre><span></span><code>$ sacct -j &lt;JobID&gt; -o JobID,User,ReqCPUS,ReqMem,ReqNodes,TimeLimit -X
-</code></pre></div>
-<p>Now let’s get some more information on how and where our job ran. In this output we see how long the job ran, and how it completed. An <code>ExitCode</code> of anything other than <code>0</code> usually means there was an error:</p>
-<div class="highlight"><pre><span></span><code>$ sacct -j &lt;JobID&gt; -o JobID,NodeList,Start,End,Elapsed,State,ExitCode -X
-</code></pre></div>
-<p>Say we want to check if our job ran efficiently, we could use the <code>seff</code> command. It uses data from the Slurm accounting database, to create information on how efficiently your job ran. We can use this information to make our jobs more efficient:</p>
-<div class="highlight"><pre><span></span><code>$ seff &lt;JobID&gt;
-</code></pre></div>
-<p>These efficiency values are only accurate, once your job has finished running. Accurate job scripts help the queuing system efficiently allocate shared resources. And therefore, your jobs should run quicker.</p>
-<p>For further reading on efficiency and general HPC-Etiquette, please read HPC Etiquette.</p>
+<h1 id="pbs-to-slurm-cheat-sheet">PBS to Slurm Cheat Sheet</h1>
+<h2 id="user-commands">User Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submit a job via script</td>
+<td><code>qsub myScript.sh</code></td>
+<td><code>sbatch myScript.sh</code></td>
+</tr>
+<tr>
+<td>Cancel a job</td>
+<td><code>qdel &lt;JobID&gt;</code></td>
+<td><code>scancel &lt;JobID&gt;</code></td>
+</tr>
+<tr>
+<td>List all running jobs</td>
+<td><code>qstat</code></td>
+<td><code>squeue</code></td>
+</tr>
+<tr>
+<td>List all your running jobs</td>
+<td><code>qstat -u &lt;GUID&gt;</code></td>
+<td><code>squeue -u &lt;GUID&gt;</code></td>
+</tr>
+<tr>
+<td>Advanced job information</td>
+<td><code>qstat -f &lt;JobID&gt;</code></td>
+<td><code>sacct -j &lt;JobID&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job ID</td>
+<td><code>$PBS_JOBID</code></td>
+<td><code>$SLURM_JOBID</code></td>
+</tr>
+<tr>
+<td>Submit directory</td>
+<td><code>$PBS_O_WORKDIR</code></td>
+<td><code>$SLURM_SUBMIT_DIR</code></td>
+</tr>
+<tr>
+<td>Allocated node list</td>
+<td><code>$PBS_NODEFILE</code></td>
+<td><code>$SLURM_JOB_NODELIST</code></td>
+</tr>
+<tr>
+<td>Current node name</td>
+<td><code>-</code></td>
+<td><code>$SLURMD_NODENAME</code></td>
+</tr>
+<tr>
+<td>Array job index</td>
+<td><code>$PBS_ARRAY_INDEX</code></td>
+<td><code>$SLURM_ARRAY_TASK_ID</code></td>
+</tr>
+<tr>
+<td>Number of CPUs</td>
+<td><code>$PBS_NUM_PPN * $PBS_NUM_NODES</code></td>
+<td><code>$SLURM_NPROCS</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="job-parameters">Job Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>PBS</th>
+<th>Slurm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job name</td>
+<td><code>#PBS -N myJob</code></td>
+<td><code>#SBATCH --job-name=myJob</code></td>
+</tr>
+<tr>
+<td>Wallclock limit</td>
+<td><code>#PBS -l walltime=hh:mm:ss</code></td>
+<td><code>#SBATCH --time=dd-hh:mm:ss</code></td>
+</tr>
+<tr>
+<td>CPU Time</td>
+<td><code>#PBS -l cput=hh:mm:ss</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>Number of nodes and CPUs</td>
+<td><code>#PBS -l nodes=2:ppn=8</code></td>
+<td><code>#SBATCH --nodes=2 --ntasks-per-node=1 --cpus-per-task=8</code></td>
+</tr>
+<tr>
+<td>Memory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --mem=8G</code></td>
+</tr>
+<tr>
+<td>GPU</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --gres=gpu:1</code></td>
+</tr>
+<tr>
+<td>Array</td>
+<td><code>#PBS -t 1-100</code></td>
+<td><code>#SBATCH --array=1-100</code></td>
+</tr>
+<tr>
+<td>Select queue / partition</td>
+<td><code>#PBS -q &lt;QueueName&gt;</code></td>
+<td><code>#SBATCH --partition=&lt;PartitionName&gt;</code></td>
+</tr>
+<tr>
+<td>Working directory</td>
+<td><code>-</code></td>
+<td><code>#SBATCH --workdir=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDOUT file</td>
+<td><code>#PBS -o /path/to/file</code></td>
+<td><code>#SBATCH --output=/path/to/file</code></td>
+</tr>
+<tr>
+<td>STDERR file</td>
+<td><code>#PBS -e /path/to/file</code></td>
+<td><code>#SBATCH --error=/path/to/file</code></td>
+</tr>
+<tr>
+<td>Email notifications</td>
+<td><code>#PBS -m a\|b\|e</code></td>
+<td><code>#SBATCH --mail-type=NONE\|BEGIN\|END\|FAIL\|ALL</code></td>
+</tr>
+<tr>
+<td>Email recipient</td>
+<td><code>#PBS -M &lt;Email&gt;</code></td>
+<td><code>#SBATCH --mail-user=&lt;Email&gt;</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1251,7 +1246,7 @@ $ squeue -j &lt;JobID&gt;
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../build-from-source/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building Software from Source">
+          <a href="../../guides/slurm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Slurm">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1261,20 +1256,20 @@ $ squeue -j &lt;JobID&gt;
                 Previous
               </span>
               <div class="md-ellipsis">
-                Building Software from Source
+                Slurm
               </div>
             </div>
           </a>
         
         
           
-          <a href="../unix-101/" class="md-footer__link md-footer__link--next" aria-label="Next: UNIX for Beginners">
+          <a href="../submission-script-templates/" class="md-footer__link md-footer__link--next" aria-label="Next: Submission Script Templates">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                UNIX for Beginners
+                Submission Script Templates
               </div>
             </div>
             <div class="md-footer__button md-icon">
