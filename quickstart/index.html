@@ -1437,8 +1437,8 @@
 </div>
 <h3 id="connecting-via-ssh">Connecting via SSH</h3>
 <p>You will need to use <code>SSH</code> to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled <code>SSH</code>utility of your device(If you are prompted for a password, it will not show up while typing):</p>
-<div class="highlight"><pre><span></span><code>ssh &lt;username&gt;@&lt;hostaname&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh &lt;username&gt;@&lt;hostaname&gt;
+</span></code></pre></div>
 <p>We would recommend you use a SSH GUI client for regular access to the platform, as it allows you to save sessions, and <code>copy+paste</code> more easily. Example software are <a href="https://www.putty.org/">PuTTY</a> and <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, however you can use whatever you prefer. </p>
 <hr />
 <h2 id="data-management">Data Management</h2>
@@ -1526,8 +1526,8 @@
 </div>
 <h3 id="transfer-data">Transfer Data</h3>
 <p>To transfer data from your local machine (or another system), you can use <code>SSH</code>. You can do this either with the <code>scp</code> command:</p>
-<div class="highlight"><pre><span></span><code>scp &lt;source file&gt; &lt;guid&gt;@&lt;hostname&gt;:&lt;target file&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>scp &lt;source file&gt; &lt;guid&gt;@&lt;hostname&gt;:&lt;target file&gt;
+</span></code></pre></div>
 <p>Or you can use a graphical SFTP Client of choice, for example <a href="https://winscp.net">WinSCP</a>. Use the connection details of the login node, mentioned above to connect.</p>
 <hr />
 <h2 id="scheduler">Scheduler</h2>
@@ -1539,8 +1539,8 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The Central HPC is very heterogeneous, meaning it is comprised of a vast variety of hardware! You can  get an overview of all servers and their available resources by running the command below on  the system:</p>
-<div class="highlight"><pre><span></span><code>sinfo -o &quot;%20n %10c %20m %30G&quot;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sinfo -o &quot;%20n %10c %20m %30G&quot;
+</span></code></pre></div>
 <details class="info">
 <summary>Explaination of command output</summary>
 <ul>
@@ -1554,8 +1554,8 @@
 </div>
 <h3 id="partitions-queues">Partitions / Queues</h3>
 <p>Partitions, also known as queues on other scheduling systems, are used to determine which nodes you want your job to run. To see the partition configuration of the HPC you are using run this command:</p>
-<div class="highlight"><pre><span></span><code>scontrol show partition
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>scontrol show partition
+</span></code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">

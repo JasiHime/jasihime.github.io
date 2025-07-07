@@ -1136,12 +1136,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label><label for="__tabbed_1_2">MARS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apptainer
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module load apptainer
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apps/apptainer
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module load apps/apptainer
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1150,12 +1150,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label><label for="__tabbed_2_2">MARS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>apptainer fake --help
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apptainer fake --help
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>apptainer --help
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apptainer --help
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1163,37 +1163,37 @@
 <h3 id="run-containers">Run containers</h3>
 <p>On MARS you can run images you made yourself, or run images provided by colleagues or software developers. Please make sure the images you are using are from trusted sources!</p>
 <p>You can run a container using the <code>apptainer run</code> command. The <code>&lt;image&gt;</code> part can either be the path to a <code>.sif</code> image you have saved locally or it can be a link to an image stored in a repository online.</p>
-<div class="highlight"><pre><span></span><code>apptainer run &lt;options&gt; &lt;image&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>apptainer run &lt;options&gt; &lt;image&gt;
+</span></code></pre></div>
 <p>As an example we will use the image hosted on the GitHub container registry by the Apptainer developers: docker://ghcr.io/apptainer/lolcow. All you need to do is provide the link and Apptainer will run the %runscript code of the image. In our example this will be a cow, telling you the current time and date:</p>
-<div class="highlight"><pre><span></span><code>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer run docker://ghcr.io/apptainer/lolcow
- ______________________________
-&lt; Tue Feb 11 14:02:52 GMT 2025 &gt;
- ------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer run docker://ghcr.io/apptainer/lolcow
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a> ______________________________
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&lt; Tue Feb 11 14:02:52 GMT 2025 &gt;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a> ------------------------------
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        \   ^__^
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>         \  (oo)\_______
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            (__)\       )\/\
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                ||----w |
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                ||     ||
+</span></code></pre></div>
 <p>If you want to run a command outside of the workflow defined in <code>%runscript</code>, you can use the <code>apptainer</code> exec command:</p>
-<div class="highlight"><pre><span></span><code>apptainer exec &lt;options&gt; &lt;image&gt; &lt;command&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apptainer exec &lt;options&gt; &lt;image&gt; &lt;command&gt;
+</span></code></pre></div>
 <p>This will not run the code within <code>%runscript</code> and instead run the code you provide on the command line:</p>
-<div class="highlight"><pre><span></span><code>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer exec docker://ghcr.io/apptainer/lolcow echo &quot;I won&#39;t do what I was made for!&quot;
-I won&#39;t do what I was made for!
-[&lt;GUID&gt;@node1 [mars] ~]$
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer exec docker://ghcr.io/apptainer/lolcow echo &quot;I won&#39;t do what I was made for!&quot;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>I won&#39;t do what I was made for!
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>[&lt;GUID&gt;@node1 [mars] ~]$
+</span></code></pre></div>
 <p>If you want to test and debug, you can run an interactive shell from within a container, using the <code>apptainer shell</code> command. To leave just use exit:</p>
-<div class="highlight"><pre><span></span><code>apptainer shell &lt;options&gt; &lt;image&gt;
-[&lt;GUID&gt;@node1 [mars] ~]$ apptainer shell docker://ghcr.io/apptainer/lolcow
-Apptainer&gt; echo $SHELL
-/bin/bash
-Apptainer&gt; echo &quot;Hello, world!&quot;
-Hello, world!
-Apptainer&gt; exit
-[&lt;GUID&gt;@node1 [mars] ~]$
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>apptainer shell &lt;options&gt; &lt;image&gt;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[&lt;GUID&gt;@node1 [mars] ~]$ apptainer shell docker://ghcr.io/apptainer/lolcow
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Apptainer&gt; echo $SHELL
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>/bin/bash
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Apptainer&gt; echo &quot;Hello, world!&quot;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Hello, world!
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Apptainer&gt; exit
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>[&lt;GUID&gt;@node1 [mars] ~]$
+</span></code></pre></div>
 <p>All three of these commands have similar parameters. If you want to see all available options for the command run <code>man apptainer &lt;run/exec/shell&gt;</code> in your console. Below we explain some options we see as important:</p>
 <table>
 <thead>

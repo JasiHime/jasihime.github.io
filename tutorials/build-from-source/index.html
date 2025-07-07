@@ -1120,8 +1120,8 @@
 <p>Open source software developers, often give you the option to build their software from the source code. This allows you to install a software yourself with all the customisations fit for your work.</p>
 <p>These installations are very individual to each software, so pay close attention to the developers documentation and installation manual. The page here is to explain some core concepts and to build your first installation from source.</p>
 <p>For our example we will be building <code>python3</code> from source. The instructions are from the README.md file of the [cpython repository(https://github.com/python/cpython?tab=readme-ov-file#build-instructions())]. Let’s create a directory where we want the installation to sit. This is going to be the directory where all your binaries and application files for python3 will reside:</p>
-<div class="highlight"><pre><span></span><code>mkdir --parents ~/mysoftware/python3/3.12.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir --parents ~/mysoftware/python3/3.12.2
+</span></code></pre></div>
 <p>For larger installations we recommend doing them within an interactive batch job if possible!</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>Sometimes software requires preinstalled dependencies to be built. These packages are often called <code>*-devel</code> and contain the header files for common libraries used during the build process. But it can also be other dependant software like <code>openMPI</code> or <code>nvidia-cuda</code>. In some cases you might be able to just load the appropriate modules on the cluster.</p>
@@ -1134,65 +1134,65 @@
 <p>For our <code>python3</code> example, no dependencies have to be installed.</p>
 <h2 id="download-source-code">Download source code</h2>
 <p>Source code is often made available through a tarball. This is a usually compressed archive containing all the source code. To download this, you can use the <code>wget</code> utility followed by the link to the tarball file. In our case this is:</p>
-<div class="highlight"><pre><span></span><code>wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
+</span></code></pre></div>
 <p>To then unpack this archive, you can use the <code>tar</code> utility:</p>
-<div class="highlight"><pre><span></span><code>tar --extract --file Python-3.13.2.tgz
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tar --extract --file Python-3.13.2.tgz
+</span></code></pre></div>
 <p>Please be aware, that archives might be <code>.zip</code> and therefore require the <code>unzip</code> utility to unpack. Some software might also expect you to download their source from a git repository. For this you can use the <code>git</code> utility.</p>
 <h2 id="compile-the-code">Compile the code</h2>
 <p>Python3 is using the <a href="https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html">GNU Autotools</a> as its build tool, which is very popular. Another one you might come across quite often is <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">Cmake</a>. Just follow the developers installation manual.</p>
 <p>First we move into the directory we unpacked above:</p>
-<div class="highlight"><pre><span></span><code>cd Python-3.13.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cd Python-3.13.2
+</span></code></pre></div>
 <p>Now, we will prepare the <code>Makefile</code>, using the <code>.configure</code> script provided by the developers. This step will ensure dependencies are satisfied and sets desired build options. This is where you can customise your installation!</p>
 <p>To get a list of all available build options you can run:</p>
-<div class="highlight"><pre><span></span><code>./configure --help
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./configure --help
+</span></code></pre></div>
 <p>You will see there is a big list! You can read up on what all of these options mean and decide for yourself what you want to change. For our example, there is only one we will be using, <code>--prefix</code>. This parameter decides where our installation will reside. As a default it will try to install the software in the system directories, which only <code>root</code> has access to. This is the parameter you will most likely need to adjust for all your installations, to ensure you can do installations without requiring elevated privileges.</p>
 <p>For our prefix, we choose the directory we created at the beginning:</p>
-<div class="highlight"><pre><span></span><code>./configure --prefix=$HOME/mysoftware/python3/3.12.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./configure --prefix=$HOME/mysoftware/python3/3.12.2
+</span></code></pre></div>
 <p>Now we can run <code>make</code>, to compile the software based on the information gathered in the <code>Makefile</code>. This step can take a long time depending how complicated the software you are building is:</p>
-<div class="highlight"><pre><span></span><code>make
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make
+</span></code></pre></div>
 <p>As a last step, this will copy the binaries and other application files into the directory we set as our <code>--prefix</code>, from where we can then make use of them:</p>
-<div class="highlight"><pre><span></span><code>make install
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>make install
+</span></code></pre></div>
 <p>To test if our installation was successful, lets run the <code>python3</code> binary we built!</p>
-<div class="highlight"><pre><span></span><code>$ $HOME/mysoftware/python3/bin/python3 --version
-Python 3.13.3
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ $HOME/mysoftware/python3/bin/python3 --version
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Python 3.13.3
+</span></code></pre></div>
 <p>If we are confident our installation was successful, we can delete all our build files and source code, to save storage:</p>
-<div class="highlight"><pre><span></span><code>rm -rf Python-3.13.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>rm -rf Python-3.13.2
+</span></code></pre></div>
 <h2 id="adjust-environment">Adjust Environment</h2>
 <p>To make the application files available in your environment, you have to change some environment variables. This process can be done using modules, the same way you make the system managed ones available, you can expand the software catalogue with your own.</p>
 <p>For our example we will do it manually. The environment variables are set as such:</p>
-<div class="highlight"><pre><span></span><code>export &lt;var-name&gt;=&quot;&lt;path1&gt;:&lt;path2&gt;:&lt;path3&gt;&quot;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>export &lt;var-name&gt;=&quot;&lt;path1&gt;:&lt;path2&gt;:&lt;path3&gt;&quot;
+</span></code></pre></div>
 <p>For all these variables, it works on a first match basis. The system goes through all paths listed and the first match it finds will be the executable run. So to ensure, our own installation is used before the system installation, our newly added paths have to be before the system paths. Ensure, to always add the current <code>$&lt;var-name&gt;</code> when updating your variables, to ensure you don’t lose access to any software!</p>
 <p>For the executables, we will add the created bin directory to the <code>$PATH</code> variable:</p>
-<div class="highlight"><pre><span></span><code>export PATH=&quot;$HOME/mysoftware/python3/3.12.2/bin:$PATH&quot;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>export PATH=&quot;$HOME/mysoftware/python3/3.12.2/bin:$PATH&quot;
+</span></code></pre></div>
 <p>For our libraries, we add the lib path to the <code>$LD_LIBRARY_PATH</code> variable:</p>
-<div class="highlight"><pre><span></span><code>export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/3.12.2/lib:$LD_LIBRARY_PATH&quot;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/3.12.2/lib:$LD_LIBRARY_PATH&quot;
+</span></code></pre></div>
 <p>And to make sure we have the right manual pages for our version we add the path to the <code>man</code> pages to <code>$MANPATH</code>:</p>
-<div class="highlight"><pre><span></span><code>export MANPATH=&quot;$HOME/mysoftware/python3/3.12.2/share/man:$MANPATH&quot;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>export MANPATH=&quot;$HOME/mysoftware/python3/3.12.2/share/man:$MANPATH&quot;
+</span></code></pre></div>
 <p>Now your installation should be seamlessly included in your software stack.</p>
-<div class="highlight"><pre><span></span><code>$ python3 --version
-Python 3.12.2
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ python3 --version
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Python 3.12.2
+</span></code></pre></div>
 <p>If you don’t want this to get lost when you next log in, you can add it to your <code>~/.bashrc</code> file.</p>
-<div class="highlight"><pre><span></span><code>$ cat ~/.bashrc
-...
-export PATH=&quot;$HOME/mysoftware/python3/bin:$PATH&quot;
-export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/lib:$LD_LIBRARY_PATH&quot;
-export MANPATH=&quot;$HOME/mysoftware/python3/share/man:$MANPATH&quot;
-...
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ cat ~/.bashrc
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>...
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>export PATH=&quot;$HOME/mysoftware/python3/bin:$PATH&quot;
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>export LD_LIBRARY_PATH=&quot;$HOME/mysoftware/python3/lib:$LD_LIBRARY_PATH&quot;
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>export MANPATH=&quot;$HOME/mysoftware/python3/share/man:$MANPATH&quot;
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>...
+</span></code></pre></div>
 
 
 
