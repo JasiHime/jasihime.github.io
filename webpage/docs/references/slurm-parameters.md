@@ -1,6 +1,6 @@
 # Slurm Parameters
 
-You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones, you can run `man sbatch` or `man srun` when logged into the system. 
+You can use a whole lot of parameters to specify your resource request to the scheduler. We will cover the most common parameters here, but if you want a full overview of all available ones and extra information, you can run `man sbatch` or `man srun` when logged into the system. 
 
 |Parameter|Example|Description|
 |---|---|---|
