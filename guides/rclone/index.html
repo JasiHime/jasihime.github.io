@@ -1121,30 +1121,207 @@
 <p>The full documentation of Rclone can be found <a href="https://rclone.org/docs/">here</a>.</p>
 <h2 id="encrypt-configuration">Encrypt configuration</h2>
 <p>To keep all your information safe, you should encrypt your rclone configuration. From there on, you will have to use a password to use rclone, so be sure to store your password in a safe place!</p>
-<p><code>hl_lines"5 10 12 14 20"
-No remotes found, make a new one?
-n) New remote
-s) Set configuration password
-q) Quit config
-n/s/q&gt; s
-Your configuration is not encrypted.
-If you add a password, you will protect your login information to cloud services.
-a) Add Password
-q) Quit to main menu
-a/q&gt; a
-Enter NEW configuration password:
-password: &lt;your password won’t show when entered&gt;
-Confirm NEW configuration password:
-password: &lt;your password won’t show when entered&gt;
-Password set
-Your configuration is encrypted.
-c) Change Password
-u) Unencrypt configuration
-q) Quit to main menu
-c/u/q&gt; q</code></p>
+<ol>
+<li>Enter configuration manager:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rclone config
+</span></code></pre></div>
+<ol>
+<li>Enter <code>s</code> to set confoguration password and confirm by entering <code>a</code>:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>No remotes found, make a new one?
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>n) New remote
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>s) Set configuration password
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>q) Quit config
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>n/s/q&gt; s
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Your configuration is not encrypted.
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>If you add a password, you will protect your login information to cloud services.
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>a) Add Password
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>q) Quit to main menu
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>a/q&gt; a
+</span></code></pre></div>
+<ol>
+<li>Enter your password. Keep in mind, that the password will not be shown in the console:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Enter NEW configuration password:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>password: &lt;your password won’t show when entered&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Confirm NEW configuration password:
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>password: &lt;your password won’t show when entered&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Password set
+</span></code></pre></div>
+<ol>
+<li>You can now leave the configuration manager by entering <code>q</code>:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Your configuration is encrypted.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>c) Change Password
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>u) Unencrypt configuration
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>q) Quit to main menu
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>c/u/q&gt; q
+</span></code></pre></div>
 <h2 id="setup-for-teams-storage">Setup for Teams storage</h2>
+<p>As Teams / OneDrive / SharePoint is the University of Glasgow’s official cloud storage, we’ll walk through on how to configure a remote connection to a Microsoft Team storage through rclone. Manuals for other connections can be found in the official documentation of Rclone.</p>
+<ol>
+<li>Enter configuration manager:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone config
+</span></code></pre></div>
+<ol>
+<li>Create a new remote connection by entering <code>n</code>:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>No remotes found, make a new one?
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>n) New remote
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>s) Set configuration password
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>q) Quit config
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>n/s/q&gt; n
+</span></code></pre></div>
+<ol>
+<li>Choose a recognisable name for your remote connection. Something like "Teams_<Team-Name>":</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Enter name for new remote.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>name&gt; Teams_HPC-Admin
+</span></code></pre></div>
+<ol>
+<li>After you will get a list of connection types. For Teams use "Microsoft OneDrive" by entering <code>onedrive</code>:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>…
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>26 / Microsoft OneDrive
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   \ (onedrive)
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>…
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Storage&gt; onedrive
+</span></code></pre></div>
+<ol>
+<li>For the next four steps just continue by pressing "return" and choosing the default option:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Option client_id.
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>OAuth Client Id.
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Leave blank normally.
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Enter a value. Press Enter to leave empty.
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>client_id&gt;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Option client_secret.
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>OAuth Client Secret.
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Leave blank normally.
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Enter a value. Press Enter to leave empty.
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>client_secret&gt;
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>Option region.
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Choose national cloud region for OneDrive.
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Choose a number from below, or type in your own string value.
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>Press Enter for the default (global).
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a> 1 / Microsoft Cloud Global
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>   \ (global)
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a> 2 / Microsoft Cloud for US Government
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>   \ (us)
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a> 3 / Microsoft Cloud Germany
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>   \ (de)
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a> 4 / Azure and Office 365 operated by Vnet Group in China
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>   \ (cn)
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>region&gt;
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>Edit advanced config?
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>y) Yes
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>n) No (default)
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>y/n&gt;
+</span></code></pre></div>
+<ol>
+<li>To create your authentication token, we use the browser on your personal device, so enter <code>n</code>:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Use web browser to automatically authenticate rclone with remote?
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a> * Say Y if the machine running rclone has a web browser you can use
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a> * Say N if running rclone on a (remote) machine without web browser access
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>If not sure try Y. If Y failed, try N.
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>y) Yes (default)
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>n) No
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>y/n&gt; n
+</span></code></pre></div>
+<ol>
+<li>On your local laptop, download rclone from the official website: <a href="https://rclone.org/downloads/">Download</a>.</li>
+<li>Extract the downloaded .zip archive and start a shell from that directory. On Windows you can do it easily by clicking into the navigation, typing <code>cmd</code> and pressing "return".</li>
+<li>Within your local console run the following command:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone authorize &quot;onedrive&quot;
+</span></code></pre></div>
+<ol>
+<li>This will open a browser on your device. If you have a UofG managed device, you should be logged in automatically. If not, log into your UofG account (GUID).</li>
+</ol>
+<p>After you give rclone the required permissions on your account, you should get a "Success!" message in the browser. Switch back to your local console and copy the access_token that was printed into the console.</p>
+<p>You can now close your local console and delete the rclone files from your laptop, if you don’t plan to set up more remote connections.</p>
+<p>Back in your MARS console, paste the access_token and press "return":</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>For this to work, you will need rclone available on a machine that has
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>a web browser available.
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>For more help and alternate methods see: https://rclone.org/remote_setup/
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Execute the following on the machine with the web browser (same rclone
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>version recommended):
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        rclone authorize &quot;onedrive&quot;
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>Then paste the result below:
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>result&gt; {&quot;access_token&quot;:&quot;&lt;string of random
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>characters&gt;&quot;,&quot;expiry&quot;:&quot;2024-12-16T14:59:27.6563422+01:00&quot;}
+</span></code></pre></div>
+<p>From the list choose "SharePoint site name or URL" by entering <code>url</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>... 
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a> 3 / Sharepoint site name or URL (e.g. mysite or https://contoso.sharepoint.com/sites/mysite)
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>   \ &quot;url&quot;
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>...
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Your choice&gt; url
+</span></code></pre></div>
+<p>Copy the URL of your Team. You can access it, when you open your Teams storage in SharePoint (web). It should look something like "https://gla.sharepoint.com/sites/<TeamNameNoSpace>". Enter this URL in the rclone config dialog:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Option config_site_url.
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Site URL
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Example: &quot;https://contoso.sharepoint.com/sites/mysite&quot; or &quot;mysite&quot;
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Enter a value.
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>config_site_url&gt; https://gla.sharepoint.com/sites/MARSAdmin
+</span></code></pre></div>
+<p>It will show you the drives it found on the Team. Select the one called Documents by entering <code>0</code> and confirming with <code>y</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Found 1 drives, please select the one you want to use:
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>0: Documents (documentLibrary) id=&lt;string of random characters&gt;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Chose drive to use:&gt; 0
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Found drive &quot;root&quot; of type &quot;documentLibrary&quot;
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>URL: https://gla.sharepoint.com/sites/MARSAdmin/Shared%20Documents
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Is that okay?
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>y) Yes (default)
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>n) No
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>y/n&gt; y
+</span></code></pre></div>
+<p>You will then get a summary of the configuration you just made. Review it and save it by pressing "return"" again:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&lt;your config&gt;
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Keep this &quot;Team_MARS-Admin&quot; remote?
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>y) Yes this is OK (default)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>e) Edit this remote
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>d) Delete this remote
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>y/e/d&gt;
+</span></code></pre></div>
+<p>You can now use your configured remote connection in rclone commands as either a source or destination. The syntax is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&lt;remote-name&gt;:&lt;path&gt;
+</span></code></pre></div>
+<ul>
+<li><code>&lt;remote-name&gt;</code>: The name given to your remote connection in the first step of the configuration process</li>
+<li><code>&lt;path&gt;</code>: The path to the directory in SharePoint where you want to save your data.</li>
+</ul>
 <h2 id="move-data-from-and-to-storage">Move data from and to storage</h2>
+<p>The command to move data is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>rclone move &lt;source&gt; &lt;destination&gt;
+</span></code></pre></div>
+<p>In this example we move data from MARS to the Teams storage previously configured. The directories specified will be created on the Teams storage if they don’t already exist.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>rclone move ~/myResearchResults Teams_HPC-Admin:Results/2024-05-01
+</span></code></pre></div>
+<p>All the files in your source directory will be moved and you should it your SharePoint site.</p>
+<p>To move data back to MARS just switch source and destination:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rclone move Teams_HPC-Admin:Results/2024-05-01 ~/myResearchResults
+</span></code></pre></div>
+<p>If you feel uncomfortable, with your data being gone from the source, use <code>copy</code> instead of <code>move</code>.</p>
 <h2 id="backing-up-data">Backing up data</h2>
+<p>It is important to keep your data on a secondary system, preferably a highly available one like OneDrive. The sync command makes source and destination identical, modifying the destination only!</p>
+<p>The command to sync your directory with a remote storage is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>rclone sync &lt;source&gt; &lt;destination&gt;
+</span></code></pre></div>
+<p>In this example we backup data from the HPC to the Teams storage previously configured. The directories specified will be created on the Teams storage if they don’t already exist.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>rclone sync ~/myData Teams_HPC-Admin:Backup/HPC-Data
+</span></code></pre></div>
 
 
 
