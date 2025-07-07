@@ -5,7 +5,7 @@
 === "Central"
 
     ``` Central
-    --8<-- "assets/downloads/central-script-templates/central-cpu-job.sh"
+    --8<-- "../assets/downloads/central-script-templates/central-cpu-job.sh"
     ```
 
 
