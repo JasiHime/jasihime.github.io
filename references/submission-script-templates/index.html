@@ -808,15 +808,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#mpi-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      MPI Job
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1045,15 +1036,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#mpi-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      MPI Job
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1071,6 +1053,7 @@
 
 
 <h1 id="submission-script-templates">Submission Script Templates</h1>
+<p>All scripts can be downloaded directly from here</p>
 <h2 id="cpu-job">CPU Job</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Central</label></div>
 <div class="tabbed-content">
@@ -1078,25 +1061,22 @@
 <div class="highlight"><pre><span></span><code>#!/bin/bash -l
 
 ############# SLURM SETTINGS #############
-#SBATCH --account=project1234   # account name (mandatory), if the job runs under a project then it&#39;ll be the project name, if not then it should =none
 #SBATCH --job-name=myjob        # some descriptive job name of your choice
-#SBATCH --output=%x-%j.out      # output file name will contain job name + job ID
-#SBATCH --error=%x-%j.err       # error file name will contain job name + job ID
-#SBATCH --partition=nodes        # which partition to use, default on MARS is “nodes&quot;
-#SBATCH --time=0-01:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --partition=cpu         # which partition to use, default &quot;cpu&quot;
+#SBATCH --time=0-01:00:00       # time limit for the whole run, in the form of d-hh:mm:ss
 #SBATCH --mem=1G                # memory required per node, in the form of [num][M|G|T]
 #SBATCH --nodes=1               # number of nodes to allocate, default is 1
 #SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
 
-############# LOADING MODULES (optional) #############
-#module load apps/xxx
-#module load libs/xxx
+############# SOFTWARE SETUP #############
+#module load xxx
 
 ############# MY CODE #############
 echo &quot;Hello from $SLURM_JOB_NODELIST&quot;
 </code></pre></div>
+<p><a class="md-button" href="https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh">Download Script</a></p>
 </div>
 </div>
 </div>
@@ -1104,7 +1084,25 @@ echo &quot;Hello from $SLURM_JOB_NODELIST&quot;
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apptainer
+<div class="highlight"><pre><span></span><code>#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --job-name=myjob        # some descriptive job name of your choice
+#SBATCH --partition=gpu         # which partition to use, default &quot;cpu&quot;
+#SBATCH --time=0-01:00:00       # time limit for the whole run, in the form of d-hh:mm:ss
+#SBATCH --mem=1G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --nodes=1               # number of nodes to allocate, default is 1
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+#SBATCH --gres=gpu:gtx1080:1    # type and number of GPU, in the format gpu:[type]:[num]
+
+############# SOFTWARE SETUP #############
+#module load xxx
+
+############# MY CODE #############
+echo &quot;Hello from $SLURM_JOB_NODELIST&quot;
+nvidia-smi
 </code></pre></div>
 </div>
 </div>
@@ -1113,16 +1111,25 @@ echo &quot;Hello from $SLURM_JOB_NODELIST&quot;
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apptainer
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="mpi-job">MPI Job</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Central</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>module load apptainer
+<div class="highlight"><pre><span></span><code>#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --job-name=myjob        # some descriptive job name of your choice
+#SBATCH --partition=cpu         # which partition to use, default &quot;cpu&quot;
+#SBATCH --time=0-01:00:00       # time limit for the whole run, in the form of d-hh:mm:ss
+#SBATCH --mem=1G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --nodes=1               # number of nodes to allocate, default is 1
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# SOFTWARE SETUP #############
+#module load xxx
+
+############# MY CODE #############
+echo &quot;Hello from $SLURM_JOB_NODELIST&quot;
+echo &quot;This is task $SLURM_ARRAY_TASK_ID out of $SLURM_ARRAY_TASK_COUNT&quot;
+exho &quot;Jobs are between $SLURM_ARRAY_TASK_MIN and $SLURM_ARRAY_TASK_MAX&quot;
 </code></pre></div>
 </div>
 </div>
