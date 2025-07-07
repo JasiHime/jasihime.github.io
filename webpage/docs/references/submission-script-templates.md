@@ -10,7 +10,7 @@ All scripts can be downloaded directly from here
     --8<-- "https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh"
     ```
 
-    [Download Script](https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh){target="_blank"}{ .md-button }
+    [Download Script](https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh){ .md-button }
 
 
 ## GPU Job
