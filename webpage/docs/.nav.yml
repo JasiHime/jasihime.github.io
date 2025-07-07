@@ -5,6 +5,7 @@ nav:
   - quickstart.md
   - Tutorials: tutorials
   - Guides: guides
+  - References: references
   - Software Modules: 
     - software-modules/environment-modules.md
     - software-modules/*.md
