@@ -45,6 +45,3 @@ markdown_extensions:
 plugins:
   - search
   - awesome-nav
-  - privacy:
-      links_attr_map:
-        target: _blank

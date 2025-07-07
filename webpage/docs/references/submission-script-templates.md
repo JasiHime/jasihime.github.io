@@ -1,6 +1,6 @@
 # Submission Script Templates
 
-All scripts can be downloaded directly from here
+The scripts below can be run on the platform as is. You can expand them with parameters from [Slurm Parameters](./slurm-parameters.md).
 
 ## CPU Job
 
@@ -9,8 +9,6 @@ All scripts can be downloaded directly from here
     ``` Central
     --8<-- "https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh"
     ```
-
-    [Download Script](https://raw.githubusercontent.com/JasiHime/jasihime.github.io/refs/heads/main/downloads/central-script-templates/central-cpu-job.sh){ .md-button }
 
 
 ## GPU Job
