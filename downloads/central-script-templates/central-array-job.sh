@@ -15,3 +15,5 @@
 
 ############# MY CODE #############
 echo "Hello from $SLURM_JOB_NODELIST"
+echo "This is task $SLURM_ARRAY_TASK_ID out of $SLURM_ARRAY_TASK_COUNT"
+exho "Jobs are between $SLURM_ARRAY_TASK_MIN and $SLURM_ARRAY_TASK_MAX"
