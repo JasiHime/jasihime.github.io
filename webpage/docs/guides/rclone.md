@@ -7,13 +7,13 @@ The full documentation of Rclone can be found [here](https://rclone.org/docs/).
 ## Encrypt configuration
 To keep all your information safe, you should encrypt your rclone configuration. From there on, you will have to use a password to use rclone, so be sure to store your password in a safe place!
 
-1. Enter configuration manager:
+Enter configuration manager:
 
 ```
 rclone config
 ```
 
-2. Enter `s` to set confoguration password and confirm by entering `a`:
+Enter `s` to set confoguration password and confirm by entering `a`:
 
 ```
 No remotes found, make a new one?
@@ -28,7 +28,7 @@ q) Quit to main menu
 a/q> a
 ```
 
-3. Enter your password. Keep in mind, that the password will not be shown in the console:
+Enter your password. Keep in mind, that the password will not be shown in the console:
 
 ```
 Enter NEW configuration password:
@@ -38,7 +38,7 @@ password: <your password won’t show when entered>
 Password set
 ```
 
-4. You can now leave the configuration manager by entering `q`:
+You can now leave the configuration manager by entering `q`:
 
 ```
 Your configuration is encrypted.
@@ -51,13 +51,13 @@ c/u/q> q
 ## Setup for Teams storage
 As Teams / OneDrive / SharePoint is the University of Glasgow’s official cloud storage, we’ll walk through on how to configure a remote connection to a Microsoft Team storage through rclone. Manuals for other connections can be found in the official documentation of Rclone.
 
-1. Enter configuration manager:
+Enter configuration manager:
 
 ```
 rclone config
 ```
 
-2. Create a new remote connection by entering `n`:
+Create a new remote connection by entering `n`:
 
 ```
 No remotes found, make a new one?
@@ -67,14 +67,14 @@ q) Quit config
 n/s/q> n
 ```
 
-3. Choose a recognisable name for your remote connection. Something like "Teams_<Team-Name>":
+Choose a recognisable name for your remote connection. Something like "Teams_<Team-Name>":
 
 ```
 Enter name for new remote.
 name> Teams_HPC-Admin
 ```
 
-4. After you will get a list of connection types. For Teams use "Microsoft OneDrive" by entering `onedrive`:
+After you will get a list of connection types. For Teams use "Microsoft OneDrive" by entering `onedrive`:
 
 ```
 …
@@ -84,7 +84,7 @@ name> Teams_HPC-Admin
 Storage> onedrive
 ```
 
-5. For the next four steps just continue by pressing "return" and choosing the default option:
+For the next four steps just continue by pressing "return" and choosing the default option:
 
 ```
 Option client_id.
@@ -119,7 +119,7 @@ n) No (default)
 y/n>
 ```
 
-6. To create your authentication token, we use the browser on your personal device, so enter `n`:
+To create your authentication token, we use the browser on your personal device, so enter `n`:
 
 ```
 Use web browser to automatically authenticate rclone with remote?
@@ -132,15 +132,17 @@ n) No
 y/n> n
 ```
 
-7. On your local laptop, download rclone from the official website: [Download](https://rclone.org/downloads/).
-8. Extract the downloaded .zip archive and start a shell from that directory. On Windows you can do it easily by clicking into the navigation, typing `cmd` and pressing "return".
-9. Within your local console run the following command:
+On your local laptop, download rclone from the official website: [Download](https://rclone.org/downloads/).
+
+Extract the downloaded .zip archive and start a shell from that directory. On Windows you can do it easily by clicking into the navigation, typing `cmd` and pressing "return".
+
+Within your local console run the following command:
 
 ```
 rclone authorize "onedrive"
 ```
 
-10. This will open a browser on your device. If you have a UofG managed device, you should be logged in automatically. If not, log into your UofG account (GUID).
+This will open a browser on your device. If you have a UofG managed device, you should be logged in automatically. If not, log into your UofG account (GUID).
 
 After you give rclone the required permissions on your account, you should get a "Success!" message in the browser. Switch back to your local console and copy the access_token that was printed into the console.
 
