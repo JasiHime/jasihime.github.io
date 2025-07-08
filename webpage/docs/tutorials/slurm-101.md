@@ -176,7 +176,7 @@ The output is as follows:
 - *NODELIST*: List of names of allocated nodes.
 
 
-Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the sacct command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the `-o` parameter followed by a list of Job-Accounting-Fields.
+Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the `sacct` command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the `-o` parameter followed by a list of Job-Accounting-Fields.
 
 A list of all available Job-Accounting-Fields can be found here: sacct manual
 

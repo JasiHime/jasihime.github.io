@@ -12,6 +12,7 @@
 
 ############# SOFTWARE SETUP #############
 #module load xxx
+#export PATH="$PATH:/mnt/home/guid/software/xxx/bin"
 
 ############# MY CODE #############
 echo "Hello from $SLURM_JOB_NODELIST"
