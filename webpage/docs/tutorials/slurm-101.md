@@ -1,7 +1,7 @@
 # Slurm for Beginners
-This small tutorial should give you a start to the world of Slurm! If you have any questions or issues, feel free to contact us! We help novice and expert users alike to get settled on MARS.
+This small tutorial should give you a start to the world of Slurm! If you have any questions or issues, feel free to contact us! We help novice and expert users alike to get settled.
 
-If you are not familiar with the UNIX console, please do the UNIX Tutorial for Beginners first.
+If you are not familiar with the UNIX console, please do the [UNIX Tutorial for Beginners](./unix-101.md) first.
 
 For this whole tutorial you will find code snippets, these are displayed as interactions on a console. Lines with a preceding $ are the commands entered, ones without, are the output of these commands.
 

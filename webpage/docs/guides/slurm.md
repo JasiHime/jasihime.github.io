@@ -64,7 +64,7 @@ cd ~/work/job_$SLURM_JOBID
 python3 myPYthonCalcs.py
 ```
 
-TO submit this to the scheduler we use the `sbatch` utility, followed by the path to the submission script:
+To submit this to the scheduler we use the `sbatch` utility, followed by the path to the submission script:
 
 ```
 sbatch myScript.sh
