@@ -1247,7 +1247,7 @@
 <li><em>NODES</em>: Number of nodes.</li>
 <li><em>NODELIST</em>: List of names of allocated nodes.</li>
 </ul>
-<p>Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the sacct command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the <code>-o</code> parameter followed by a list of Job-Accounting-Fields.</p>
+<p>Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the <code>sacct</code> command. Using the JobID you saved from your job, we can show a wide list of information for your job. Use the <code>-o</code> parameter followed by a list of Job-Accounting-Fields.</p>
 <p>A list of all available Job-Accounting-Fields can be found here: sacct manual</p>
 <p>Below is an example that gives you an overview of the requested resources for a job. You should see, these are the values you provided in the “SLURM SETTINGS” section of the script:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$ sacct -j &lt;JobID&gt; -o JobID,User,ReqCPUS,ReqMem,ReqNodes,TimeLimit -X
