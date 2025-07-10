@@ -4,7 +4,9 @@ nav:
   - account-registration.md
   - quickstart.md
   - Tutorials: tutorials
-  - Guides: guides
+  - Guides: 
+    - guides/slurm.md
+    - guides/*.md
   - References: references
   - Software Modules: 
     - software-modules/environment-modules.md
