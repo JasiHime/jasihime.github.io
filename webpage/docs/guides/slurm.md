@@ -123,3 +123,34 @@ sacct -X -u <guid> --starttime $(date -d "-7days" +%Y-%m-%d) -o JobID,JobName,Us
 ```
 
 ## Job Efficiency
+For CPU and Memory efficiency, you can easily use the `seff` command. If you provide it with the JobId you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.
+
+```
+$ seff <JobID>
+Job ID: <JobID>
+Cluster: <cluster-name>>
+User/Group: <giod>/<group>
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:01:00
+CPU Efficiency: 49.18% of 00:02:02 core-walltime
+Job Wall-clock time: 00:01:01
+Memory Utilized: 5.97 GB
+Memory Efficiency: 18.64% of 32.00 GB
+```
+
+You can see only **50%** of the requested CPU resources were used, this means in this case you could go down from 2 CPUs to 1. For CPU efficiency, we want to get as close to 100% as possible.
+
+The memory usage was also overestimated and could go down a bit too. For memory, it is fine to keep a bit of a buffer, as you don’t want to risk getting an Out Of Memory (OOM) error. I would aim to stay above 70% efficiency.
+
+To see if your time estimation was right, you can compare the requested with the actual time with the sacct command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.
+
+```
+$ sacct -X -o Timelimit,Elapsed -j <JobID>
+ Timelimit    Elapsed
+---------- ----------
+  04:00:00   01:48:33
+```
+
+There is no easy way to get GPU efficiency, but generally speaking if you don’t need GPU, don’t request it.
