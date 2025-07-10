@@ -1386,6 +1386,29 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sacct -X -u &lt;guid&gt; --starttime $(date -d &quot;-7days&quot; +%Y-%m-%d) -o JobID,JobName,User,Submit,Start,End
 </span></code></pre></div>
 <h2 id="job-efficiency">Job Efficiency</h2>
+<p>For CPU and Memory efficiency, you can easily use the <code>seff</code> command. If you provide it with the JobId you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ seff &lt;JobID&gt;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Job ID: &lt;JobID&gt;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Cluster: &lt;cluster-name&gt;&gt;
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>User/Group: &lt;giod&gt;/&lt;group&gt;
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>State: COMPLETED (exit code 0)
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Nodes: 1
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Cores per node: 2
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>CPU Utilized: 00:01:00
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>CPU Efficiency: 49.18% of 00:02:02 core-walltime
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>Job Wall-clock time: 00:01:01
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>Memory Utilized: 5.97 GB
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>Memory Efficiency: 18.64% of 32.00 GB
+</span></code></pre></div>
+<p>You can see only <strong>50%</strong> of the requested CPU resources were used, this means in this case you could go down from 2 CPUs to 1. For CPU efficiency, we want to get as close to 100% as possible.</p>
+<p>The memory usage was also overestimated and could go down a bit too. For memory, it is fine to keep a bit of a buffer, as you don’t want to risk getting an Out Of Memory (OOM) error. I would aim to stay above 70% efficiency.</p>
+<p>To see if your time estimation was right, you can compare the requested with the actual time with the sacct command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ sacct -X -o Timelimit,Elapsed -j &lt;JobID&gt;
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a> Timelimit    Elapsed
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>---------- ----------
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  04:00:00   01:48:33
+</span></code></pre></div>
+<p>There is no easy way to get GPU efficiency, but generally speaking if you don’t need GPU, don’t request it.</p>
 
 
 
