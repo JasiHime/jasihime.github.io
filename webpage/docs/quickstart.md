@@ -18,15 +18,15 @@ HPC can be built in in different configurations. This configuration is very popu
 The HPC is build of these components:
 
 - **Login Node**: This is the system all users interact with. If you want to interact with any of the other components, it has to be through the login node.
-- **Scheduler**: This is the brain of the cluster. All your scheduling and status requests from the login node go this system. 
-- **Compute Servers**: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have a allocation. 
+- **Scheduler**: This is the brain of the cluster. All your scheduling and status requests from the login node go to this system. 
+- **Compute Servers**: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have an allocation. 
 - **Shared Storage**: Most of the storage you interact with on the cluster is shared between the login node and all available compute servers. Therefore you can manage the data you need within your jobs from the login node.
 - **HPC Network**: The network is shut off from the Campus network and therefore systems within it, will not be accessible to users outside of the login node.
 
 ### How does HPC work?
 You will be submitting "work packages" in form of submission scripts, that define your resource requirement, an educated estimation of how long your job will run, and the workflow you want to run. Your work should run fully autonomous, this means no human interaction like GUI or console inputs. You can however, also have interactive sessions through HPC, these are useful for environment preparations, tests and debugging. 
 
-Your work package will then be queued by the scheduler. The scheduler will decide where your job can run, based on your resource requirements described. Multiple jobs can run on one server. If there is enough resource available your job might run right away, otherwise it will be queued and run at a later time. You should be able to provide contact information, and the scheduler will keep you in the loop if your job has started, finished or failed. 
+Your work package will be queued by the scheduler. The scheduler will decide where your job can run, based on your resource requirements described. Multiple jobs can run on one server. If there is enough resource available your job might run right away, otherwise it will be queued and run at a later time. You should be able to provide contact information, and the scheduler will keep you in the loop if your job has started, finished or failed. 
 
 Scheduling is a complicated matter, and multiple factors play into the priority of your job, however generally, the smaller your job, the faster it will run, so it pays out to be efficient!
 
@@ -47,7 +47,7 @@ After you got your account, to access the system, you log into a login node. The
     - **Password**: *GUID Password*
 
 ### Connecting via SSH
-You will need to use `SSH` to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled `SSH`utility of your device(If you are prompted for a password, it will not show up while typing):
+You will need to use `SSH` to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled `SSH`utility of your device (If you are prompted for a password, it will not show up while typing):
 
 ```
 ssh <username>@<hostaname>
@@ -60,7 +60,7 @@ We would recommend you use a SSH GUI client for regular access to the platform, 
 ## Data Management
 Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform. 
 
-All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. You can use Rclone to manage your data from MARS.
+All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. 
 
 
 ### Storage Spaces
@@ -111,10 +111,10 @@ Or you can use a graphical SFTP Client of choice, for example [WinSCP](https://w
 ## Scheduler
 The scheduler used is **Slurm Workload Manager**, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html). 
 
-The information here is the configurations you will need to know to use the cluster.
+The information here is the configurations you will need to know to use th specific cluster.
 
 ### Resources
-Compute servers - also referred to as nodes - can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
+Compute servers - also referred to as nodes - can carry different resource configurations to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.
 
 === "Central"
 
@@ -139,7 +139,7 @@ Partitions, also known as queues on other scheduling systems, are used to determ
 
 === "Central"
 
-    |Name|Description|
+    |Partition|Description|
     |---|---|
     |cpu|This is the *default* partition, meaning this is chosen when no partition is specified. It contains all CPU focused servers of the Cluster.|
     |gpu|This partitions cotains all servers with GPU resources available. You can specify which type with the `--gres` parameter.|

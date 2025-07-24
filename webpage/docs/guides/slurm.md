@@ -76,13 +76,13 @@ You should get a message in return with a **JobID**. This number is unique to ev
 ### Modify Job
 After scheduling your job you still have limited options to modify your job.  If your job has not started yet, you are able to change almost all parameters. If it is running already, a lot of things will be locked the way it is.
 
-To modify the job use the `scontrol` utility. If run `scontrol show JobID=<JobID>` you see all available parameters. Here an example where we lower the runtime limit to 3 days:
+To modify the job use the `scontrol` utility. If you run `scontrol show JobID=<JobID>` you see all available parameters. Here an example where we lower the runtime limit to 3 days:
 
 ```
 scontrol update JobID=<JobID> TimeLimit=3-00:00:00
 ```
 
-### Delete Job
+### Delete / Cancel Job
 To delete a job you can use the `scancel` utility followed by your JobID.
 
 ```
@@ -102,7 +102,7 @@ squeue -u <guid> -j <JobID>
 ### Historic Job Analysis
 Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the `sacct` command.  Use the `-o` parameter followed by a list of Job-Accounting-Fields. A list of all available Job-Accounting-Fields can be found here: [sacct manual](https://slurm.schedmd.com/sacct.html#SECTION_Job-Accounting-Fields).
 
-Per default you will get information for each job step in your output. If you don^t want more than one line for each of your jobs, you can use the `-X` parameter.
+Per default you will get information for each job step in your output. If you don't want more than one line for each of your jobs, you can use the `-X` parameter.
 
 You can  get information for a specific job  using the `-j` parameter, folowed by your JobID:
 
@@ -116,14 +116,14 @@ Or more broadly all the jobs run by your user, using the `-u` parameter with you
 sacct -X -u <guid> -o JobID,JobName,User,Submit,Start,End
 ```
 
-You can curther restrics your outous with different parameters. One of the most helpful ones are the `--starttime` and `--endtime` with these you can  define in what period you want to lookup jobs for. If you only specify `--starttime`, the endtime will  be set to NOW. Here an example, if you wanted to see  all your jobs in the last 7 days:
+You can further restrict your output with different parameters. One of the more common ones are the `--starttime` and `--endtime` with these you can  define in what period you want to lookup jobs for. If you only specify `--starttime`, the endtime will  be set to now. Here an example, where you see all your jobs in the last 7 days:
 
 ```
 sacct -X -u <guid> --starttime $(date -d "-7days" +%Y-%m-%d) -o JobID,JobName,User,Submit,Start,End
 ```
 
 ## Job Efficiency
-For CPU and Memory efficiency, you can easily use the `seff` command. If you provide it with the JobId you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.
+For CPU and Memory efficiency, you can easily use the `seff` command. If you provide it with the JobID you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.
 
 ```
 $ seff <JobID>
@@ -144,7 +144,7 @@ You can see only **50%** of the requested CPU resources were used, this means in
 
 The memory usage was also overestimated and could go down a bit too. For memory, it is fine to keep a bit of a buffer, as you don’t want to risk getting an Out Of Memory (OOM) error. I would aim to stay above 70% efficiency.
 
-To see if your time estimation was right, you can compare the requested with the actual time with the sacct command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.
+To see if your time estimation was right, you can compare the requested with the actual time with the `sacct` command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.
 
 ```
 $ sacct -X -o Timelimit,Elapsed -j <JobID>
