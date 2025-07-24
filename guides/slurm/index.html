@@ -655,9 +655,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-job" class="md-nav__link">
+  <a href="#delete-cancel-job" class="md-nav__link">
     <span class="md-ellipsis">
-      Delete Job
+      Delete / Cancel Job
     </span>
   </a>
   
@@ -1266,9 +1266,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-job" class="md-nav__link">
+  <a href="#delete-cancel-job" class="md-nav__link">
     <span class="md-ellipsis">
-      Delete Job
+      Delete / Cancel Job
     </span>
   </a>
   
@@ -1383,10 +1383,10 @@
 <h2 id="job-management">Job Management</h2>
 <h3 id="modify-job">Modify Job</h3>
 <p>After scheduling your job you still have limited options to modify your job.  If your job has not started yet, you are able to change almost all parameters. If it is running already, a lot of things will be locked the way it is.</p>
-<p>To modify the job use the <code>scontrol</code> utility. If run <code>scontrol show JobID=&lt;JobID&gt;</code> you see all available parameters. Here an example where we lower the runtime limit to 3 days:</p>
+<p>To modify the job use the <code>scontrol</code> utility. If you run <code>scontrol show JobID=&lt;JobID&gt;</code> you see all available parameters. Here an example where we lower the runtime limit to 3 days:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>scontrol update JobID=&lt;JobID&gt; TimeLimit=3-00:00:00
 </span></code></pre></div>
-<h3 id="delete-job">Delete Job</h3>
+<h3 id="delete-cancel-job">Delete / Cancel Job</h3>
 <p>To delete a job you can use the <code>scancel</code> utility followed by your JobID.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>scancel &lt;JobID&gt;
 </span></code></pre></div>
@@ -1398,18 +1398,18 @@
 </span></code></pre></div>
 <h3 id="historic-job-analysis">Historic Job Analysis</h3>
 <p>Slurm keeps a database with information of all jobs run using the system. To access this data, you can use the <code>sacct</code> command.  Use the <code>-o</code> parameter followed by a list of Job-Accounting-Fields. A list of all available Job-Accounting-Fields can be found here: <a href="https://slurm.schedmd.com/sacct.html#SECTION_Job-Accounting-Fields">sacct manual</a>.</p>
-<p>Per default you will get information for each job step in your output. If you don^t want more than one line for each of your jobs, you can use the <code>-X</code> parameter.</p>
+<p>Per default you will get information for each job step in your output. If you don't want more than one line for each of your jobs, you can use the <code>-X</code> parameter.</p>
 <p>You can  get information for a specific job  using the <code>-j</code> parameter, folowed by your JobID:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sacct -X -j &lt;JobID&gt; -o JobID,JobName,User,Submit,Start,End
 </span></code></pre></div>
 <p>Or more broadly all the jobs run by your user, using the <code>-u</code> parameter with your GUID:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sacct -X -u &lt;guid&gt; -o JobID,JobName,User,Submit,Start,End
 </span></code></pre></div>
-<p>You can curther restrics your outous with different parameters. One of the most helpful ones are the <code>--starttime</code> and <code>--endtime</code> with these you can  define in what period you want to lookup jobs for. If you only specify <code>--starttime</code>, the endtime will  be set to NOW. Here an example, if you wanted to see  all your jobs in the last 7 days:</p>
+<p>You can further restrict your output with different parameters. One of the more common ones are the <code>--starttime</code> and <code>--endtime</code> with these you can  define in what period you want to lookup jobs for. If you only specify <code>--starttime</code>, the endtime will  be set to now. Here an example, where you see all your jobs in the last 7 days:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sacct -X -u &lt;guid&gt; --starttime $(date -d &quot;-7days&quot; +%Y-%m-%d) -o JobID,JobName,User,Submit,Start,End
 </span></code></pre></div>
 <h2 id="job-efficiency">Job Efficiency</h2>
-<p>For CPU and Memory efficiency, you can easily use the <code>seff</code> command. If you provide it with the JobId you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.</p>
+<p>For CPU and Memory efficiency, you can easily use the <code>seff</code> command. If you provide it with the JobID you want to analyse, it will show you how efficient the requested resources were used. The numbers can only be fully trusted after the job has finished running.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ seff &lt;JobID&gt;
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Job ID: &lt;JobID&gt;
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Cluster: &lt;cluster-name&gt;&gt;
@@ -1425,7 +1425,7 @@
 </span></code></pre></div>
 <p>You can see only <strong>50%</strong> of the requested CPU resources were used, this means in this case you could go down from 2 CPUs to 1. For CPU efficiency, we want to get as close to 100% as possible.</p>
 <p>The memory usage was also overestimated and could go down a bit too. For memory, it is fine to keep a bit of a buffer, as you don’t want to risk getting an Out Of Memory (OOM) error. I would aim to stay above 70% efficiency.</p>
-<p>To see if your time estimation was right, you can compare the requested with the actual time with the sacct command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.</p>
+<p>To see if your time estimation was right, you can compare the requested with the actual time with the <code>sacct</code> command and adjust accordingly. It is fine to have a a time buffer, in case there are minor delays in the command. In this example below, you could adjust the time limit to 2 hours.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ sacct -X -o Timelimit,Elapsed -j &lt;JobID&gt;
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a> Timelimit    Elapsed
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>---------- ----------

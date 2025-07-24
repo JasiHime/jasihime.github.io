@@ -1430,14 +1430,14 @@
 <p>The HPC is build of these components:</p>
 <ul>
 <li><strong>Login Node</strong>: This is the system all users interact with. If you want to interact with any of the other components, it has to be through the login node.</li>
-<li><strong>Scheduler</strong>: This is the brain of the cluster. All your scheduling and status requests from the login node go this system. </li>
-<li><strong>Compute Servers</strong>: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have a allocation. </li>
+<li><strong>Scheduler</strong>: This is the brain of the cluster. All your scheduling and status requests from the login node go to this system. </li>
+<li><strong>Compute Servers</strong>: This symbolises all compute servers you could get allocations from through the scheduler. You should not access the servers directly unless you have an allocation. </li>
 <li><strong>Shared Storage</strong>: Most of the storage you interact with on the cluster is shared between the login node and all available compute servers. Therefore you can manage the data you need within your jobs from the login node.</li>
 <li><strong>HPC Network</strong>: The network is shut off from the Campus network and therefore systems within it, will not be accessible to users outside of the login node.</li>
 </ul>
 <h3 id="how-does-hpc-work">How does HPC work?</h3>
 <p>You will be submitting "work packages" in form of submission scripts, that define your resource requirement, an educated estimation of how long your job will run, and the workflow you want to run. Your work should run fully autonomous, this means no human interaction like GUI or console inputs. You can however, also have interactive sessions through HPC, these are useful for environment preparations, tests and debugging. </p>
-<p>Your work package will then be queued by the scheduler. The scheduler will decide where your job can run, based on your resource requirements described. Multiple jobs can run on one server. If there is enough resource available your job might run right away, otherwise it will be queued and run at a later time. You should be able to provide contact information, and the scheduler will keep you in the loop if your job has started, finished or failed. </p>
+<p>Your work package will be queued by the scheduler. The scheduler will decide where your job can run, based on your resource requirements described. Multiple jobs can run on one server. If there is enough resource available your job might run right away, otherwise it will be queued and run at a later time. You should be able to provide contact information, and the scheduler will keep you in the loop if your job has started, finished or failed. </p>
 <p>Scheduling is a complicated matter, and multiple factors play into the priority of your job, however generally, the smaller your job, the faster it will run, so it pays out to be efficient!</p>
 <hr />
 <h2 id="access-the-cluster">Access the Cluster</h2>
@@ -1459,14 +1459,14 @@
 </div>
 </div>
 <h3 id="connecting-via-ssh">Connecting via SSH</h3>
-<p>You will need to use <code>SSH</code> to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled <code>SSH</code>utility of your device(If you are prompted for a password, it will not show up while typing):</p>
+<p>You will need to use <code>SSH</code> to connect to the login node and use the HPC. The simplest way to connect is by opening a console and connect using the preinstalled <code>SSH</code>utility of your device (If you are prompted for a password, it will not show up while typing):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh &lt;username&gt;@&lt;hostaname&gt;
 </span></code></pre></div>
 <p>We would recommend you use a SSH GUI client for regular access to the platform, as it allows you to save sessions, and <code>copy+paste</code> more easily. Example software are <a href="https://www.putty.org/">PuTTY</a> and <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, however you can use whatever you prefer. </p>
 <hr />
 <h2 id="data-management">Data Management</h2>
 <p>Data is an important part of HPC. Where and how to store your data is important for efficient usage of the platform. </p>
-<p>All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. You can use Rclone to manage your data from MARS.</p>
+<p>All storage available is to be used for the duration of your work. It is not expected to provide long term/primary storage. The data will assumed to be transient with only limited protection. As the HPC is not a primary storage solution, we recommend storing all HPC data, you can’t afford to lose in a primary, safe location like a centralised storage system provided by your school or a Team within Microsoft Teams. </p>
 <h3 id="storage-spaces">Storage Spaces</h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Central</label></div>
 <div class="tabbed-content">
@@ -1555,9 +1555,9 @@
 <hr />
 <h2 id="scheduler">Scheduler</h2>
 <p>The scheduler used is <strong>Slurm Workload Manager</strong>, developed by SchedMD. Slurm has a very in depth documentation themselves, which could be useful to read through, for a more in depth understanding of how this software works <a href="https://slurm.schedmd.com/quickstart.html">Quick Start User Guide</a>. </p>
-<p>The information here is the configurations you will need to know to use the cluster.</p>
+<p>The information here is the configurations you will need to know to use th specific cluster.</p>
 <h3 id="resources">Resources</h3>
-<p>Compute servers - also referred to as nodes - can carry different resource configurations, to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.</p>
+<p>Compute servers - also referred to as nodes - can carry different resource configurations to fit different workloads. For example, some servers might offer high amount of CPU, while others offer GPU resource.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Central</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1585,7 +1585,7 @@
 <table>
 <thead>
 <tr>
-<th>Name</th>
+<th>Partition</th>
 <th>Description</th>
 </tr>
 </thead>
